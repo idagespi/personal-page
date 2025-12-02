@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma. Ida G. Espineda - Product Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #2d5016 0%, #5c9a3e 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2d5016 0%, #5c9a3e 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-info a:hover {
+            opacity: 0.7;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+        }
+        
+        h2 {
+            color: #2d5016;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #5c9a3e;
+            padding-bottom: 10px;
+        }
+        
+        .summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .tech-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: default;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(45, 80, 22, 0.3);
+        }
+        
+        .tech-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .tech-name {
+            font-weight: 600;
+            color: #2d5016;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .tech-desc {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #5c9a3e;
+            transition: background 0.3s;
+        }
+        
+        .experience-item:hover {
+            background: #e9ecef;
+        }
+        
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .exp-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .exp-company {
+            font-size: 1.1em;
+            color: #2d5016;
+            margin-top: 5px;
+        }
+        
+        .exp-date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .exp-highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .exp-highlights li {
+            padding-left: 25px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .exp-highlights li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #5c9a3e;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .other-exp {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .other-exp-item {
+            padding: 20px;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .other-exp-item:hover {
+            border-color: #5c9a3e;
+            box-shadow: 0 5px 15px rgba(45, 80, 22, 0.15);
+        }
+        
+        .other-exp-title {
+            font-size: 1.05em;
+            font-weight: 600;
+            color: #2d5016;
+            margin-bottom: 5px;
+        }
+        
+        .other-exp-company {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .other-exp-date {
+            font-size: 0.85em;
+            color: #999;
+            font-style: italic;
+        }
+        
+        .visa-section {
+            background: linear-gradient(135deg, #2d5016 0%, #5c9a3e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        .visa-title {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid white;
+            padding-bottom: 15px;
+        }
+        
+        .visa-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .visa-main {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .visa-status {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .visa-timeline {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .timeline-icon {
+            background: white;
+            color: #2d5016;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 1.2em;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-label {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-desc {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .exp-header {
+                flex-direction: column;
+            }
+            
+            .visa-section {
+                padding: 25px 20px;
+            }
+            
+            .visa-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>Ma. Ida G. Espineda</h1>
+                <p class="tagline">Product Manager | SaaS & Platform Specialist</p>
+                <div class="contact-info">
+                    <a href="mailto:igespineda@gmail.com">✉ igespineda@gmail.com</a>
+                    <a href="tel:+61409033652">📱 +61 409 033 652</a>
+                    <span>📍 Homebush, NSW 2140</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Professional Summary</h2>
+                <p class="summary">
+                    Product Manager with <strong>7+ years</strong> of experience building and scaling SaaS, e-commerce, and digital platforms. 
+                    Proven ability to develop product strategies, define roadmaps, and lead agile teams across legal tech, ads tech, and 
+                    platform businesses. Experienced in customer discovery, stakeholder engagement, and translating user needs into 
+                    scalable features with a strong focus on adoption and growth.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>Software & Technical Expertise</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">🎯</div>
+                        <div class="tech-name">Jira Ecosystem</div>
+                        <div class="tech-desc">Jira, JSM, Jira Discovery, Confluence, JQL</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🎨</div>
+                        <div class="tech-name">Design & Prototyping</div>
+                        <div class="tech-desc">Figma, Zeplin, Miro</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🤖</div>
+                        <div class="tech-name">AI Tools</div>
+                        <div class="tech-desc">Claude, Gemini, CursorAI, ChatGPT</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📊</div>
+                        <div class="tech-name">Data & Analytics</div>
+                        <div class="tech-desc">SQL, Excel, GoodData, BI Dashboards</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">⚡</div>
+                        <div class="tech-name">Agile Methods</div>
+                        <div class="tech-desc">Scrum, Kanban, Product Delivery</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🔗</div>
+                        <div class="tech-name">Integrations</div>
+                        <div class="tech-desc">Outlook, Dynamics 365, MS SSO, 2FA</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🔍</div>
+                        <div class="tech-name">Product Discovery</div>
+                        <div class="tech-desc">User Research, Customer Interviews, UAT</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📈</div>
+                        <div class="tech-name">Growth & Strategy</div>
+                        <div class="tech-desc">Roadmapping, A/B Testing, KPI Tracking</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Key Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Product Manager</div>
+                            <div class="exp-company">BarBooks Australia (Legal SaaS)</div>
+                        </div>
+                        <div class="exp-date">Jul 2022 – Present</div>
+                    </div>
+                    <ul class="exp-highlights">
+                        <li>Own end-to-end product lifecycle for legal fintech SaaS serving <strong>2,000+ users</strong> across 7 chambers</li>
+                        <li>Lead product discovery using <strong>Jira Discovery</strong>, define BRDs/PRDs via <strong>Jira & Confluence</strong></li>
+                        <li>Act as Product Owner and Scrum Master, running agile ceremonies and ensuring delivery velocity</li>
+                        <li><strong>Key Projects:</strong> Invoicing & Reporting, Outlook Calendar Integration, Dynamics 365 Integration, MS SSO & 2FA, GoodData Analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Business Product Lead – Shopee Ads</div>
+                            <div class="exp-company">Shopee Philippines (eCommerce Platform)</div>
+                        </div>
+                        <div class="exp-date">Nov 2020 – Jul 2022</div>
+                    </div>
+                    <ul class="exp-highlights">
+                        <li>Country lead for Shopee Ads across Marketplace, Mall/Brand, and Cross-border segments</li>
+                        <li>Collaborated with Singapore regional PMs to execute product launches, A/B tests, and UATs</li>
+                        <li>Spearheaded go-to-market programs that <strong>doubled ad revenue YOY</strong></li>
+                        <li>Built product usage dashboards, managed 18-person paid ads team, and optimized operations</li>
+                        <li>Led program management initiatives using product and user data to design programs that improved ads adoption and revenue</li>
+                    </ul>
+                </div>
+                
+                <h3 style="font-size: 1.3em; color: #2d5016; margin: 30px 0 15px 0;">Additional Experience</h3>
+                
+                <div class="other-exp">
+                    <div class="other-exp-item">
+                        <div class="other-exp-title">Business Development Officer</div>
+                        <div class="other-exp-company">PAL Express (Airline)</div>
+                        <div class="other-exp-date">Apr 2018 – May 2020</div>
+                    </div>
+                    
+                    <div class="other-exp-item">
+                        <div class="other-exp-title">Business Development</div>
+                        <div class="other-exp-company">Guide to the Philippines (Travel Platform)</div>
+                        <div class="other-exp-date">Jan 2019 – Apr 2020</div>
+                    </div>
+                    
+                    <div class="other-exp-item">
+                        <div class="other-exp-title">Project Development Specialist</div>
+                        <div class="other-exp-company">Filinvest Land Inc.</div>
+                        <div class="other-exp-date">Aug 2015 – Feb 2018</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Education & Certifications</h2>
+                <div class="experience-item">
+                    <div class="exp-title">Bachelor of Science, Economics</div>
+                    <div class="exp-company">University of the Philippines, Diliman</div>
+                    <div class="exp-date" style="margin-top: 10px;">2011-2015</div>
+                </div>
+                <div class="experience-item">
+                    <ul class="exp-highlights">
+                        <li><strong>AI for Product Management</strong> – Pendo.io (Mar 2025)</li>
+                        <li><strong>SQL: From Zero to Hero</strong> – Udemy (Mar 2025)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="visa-section">
+                <h3 class="visa-title">🇦🇺 Australian Work Authorization</h3>
+                <div class="visa-content">
+                    <div class="visa-main">
+                        <div class="visa-status">
+                            ✓ Full Working Rights<br>
+                            No Sponsorship Transfer Required
+                        </div>
+                    </div>
+                    <div class="visa-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">1</div>
+                            <div class="timeline-content">
+                                <div class="timeline-label">Current Status</div>
+                                <div class="timeline-desc">482 Visa with immediate 6-month open work capacity upon resignation</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">2</div>
+                            <div class="timeline-content">
+                                <div class="timeline-label">May 2026</div>
+                                <div class="timeline-desc">Automatic transition to Bridging Visa A (Partner's 186 PR application)</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">✓</div>
+                            <div class="timeline-content">
+                                <div class="timeline-label">Result</div>
+                                <div class="timeline-desc">Continuous employment eligibility ensured</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
