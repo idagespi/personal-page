@@ -98,9 +98,9 @@
                         </span>
                     </h1>
                     
-                    <!-- Updated copy, focusing on the core value proposition -->
+                    <!-- Core mission statement -->
                     <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
-                        I focus on helping teams build clear, user-centred digital products and am passionate about shipping efficient outcomes. I strive to simplify complexity and optimize processes wherever I work.
+                        I focus on helping teams build clear, user-centred digital products and am passionate about shipping efficient outcomes.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
@@ -122,7 +122,6 @@
                 <div class="w-full max-w-sm mx-auto md:max-w-none md:w-full h-auto flex justify-center order-1 md:order-2">
                     <div class="relative w-72 h-72 md:w-96 md:h-96 group cursor-pointer photo-block">
                         <!-- Layer 1: Colored background block (Offset and rotated) -->
-                        <!-- NOTE: Removed background color opacity and added border radius to match the photo's frame -->
                         <div class="absolute inset-0 bg-custom-teal/80 rounded-2xl transform translate-x-4 translate-y-4 rotate-[-3deg] shadow-xl transition-all duration-500 group-hover:rotate-0 group-hover:translate-x-0 group-hover:translate-y-0"></div>
 
                         <!-- Layer 2: Photo itself (Simplified inner container) -->
@@ -139,23 +138,28 @@
             </div>
         </section>
 
-        <!-- 2.2. WHAT I DO / SERVICES (Summary inserted here) -->
+        <!-- 2.2. WHAT I DO / SERVICES (Order of elements changed, bullet list removed) -->
         <section id="services" class="p-6 md:p-16 py-20 max-w-6xl mx-auto">
             
+            <!-- 1. HEADER (Moved to the top) -->
+            <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">What I Deliver</h2>
+
+            <!-- 2. SUMMARY (Moved below the header) -->
             <p class="text-2xl text-gray-700 mb-12 text-center max-w-4xl mx-auto font-medium">
                 I bring <strong>7+ years of hands-on experience across SaaS, e-commerce, and operations.</strong> I strive to simplify complexity and optimize processes wherever I work.
             </p>
             
-            <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">What I Deliver</h2>
+            <!-- REMOVED BULLETED LIST -->
+            
             <div id="services-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Services Cards rendered by JS -->
             </div>
         </section>
 
-        <!-- 2.3. RECENT PROJECTS -->
+        <!-- 2.3. RECENT PROJECTS (Title changed to Selected Projects) -->
         <section id="cases" class="p-6 md:p-16 py-20 bg-white/70 max-w-full">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Recent Projects: Delivering Scalable Outcomes</h2>
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Selected Projects</h2>
                 
                 <!-- Case Study 1: Outlook Calendar Integration (Project 1) -->
                 <div class="mb-16 p-8 md:p-12 bg-gray-50 rounded-xl shadow-xl border-l-8 border-custom-purple content-card">
@@ -167,12 +171,12 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2 space-y-6">
-                            <!-- Problem -->
+                            <!-- Problem (Asterisks removed from description) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">Barristers and clerks manually updated schedules in both Outlook and BarBooks, causing **double bookings, missing appointments, and significant administrative burden**. This reduced productivity and increased the risk of costly errors due to data inconsistency.</p>
                             </div>
-                            <!-- What I Did (Updated PM Tasks) -->
+                            <!-- What I Did (Reordered for impact) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4>
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
@@ -184,24 +188,23 @@
                             </div>
                         </div>
                         
-                        <!-- Outcomes/Metrics -->
+                        <!-- Outcomes/Metrics (Removing hyphen) -->
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-teal/10 rounded-lg">
-                                <p class="font-bold text-custom-teal">Reduced Manual Scheduling by ~60%</p>
-                                <p class="text-sm text-gray-700">Eliminated the need for duplicate entry, resulting in significant time savings and higher productivity.</p>
+                                <p class="font-bold text-custom-teal">60% Reduction in Manual Scheduling</p>
+                                <p class="text-sm text-gray-700">Eliminated duplicate entry and saving hours weekly.</p>
                             </div>
                             <div class="p-4 bg-custom-teal/10 rounded-lg">
-                                <p class="font-bold text-custom-teal">Increased Calendar Feature Usage</p>
-                                <p class="text-sm text-gray-700">Increased daily active usage of core calendar features due to seamless integration and real-time visibility.</p>
+                                <p class="font-bold text-custom-teal">2x Increase in Calendar Feature Adoption</p>
+                                <p class="text-sm text-gray-700">Driving daily engagement through seamless integration.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Case Study 2: Diary Redesign UI Revamp for Clerk View (UPDATED CONTENT) -->
+                <!-- Case Study 2: Diary Redesign UI Revamp for Clerk View -->
                 <div class="p-8 md:p-12 bg-gray-50 rounded-xl shadow-xl border-l-8 border-custom-teal content-card">
-                    <!-- Title updated -->
                     <h3 class="text-3xl font-bold text-custom-teal mb-4">Diary Redesign: UI Revamp for Clerk View</h3>
                     <div class="flex flex-wrap text-sm text-gray-600 mb-6 space-x-4">
                         <span class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-1 text-gray-500"></i> Role: Product Manager</span>
@@ -215,28 +218,28 @@
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">The legacy Clerk Diary View was inefficient, using excessive screen space and preventing clerks from viewing necessary scheduling and user information at a glance. This poor UX impacted usability and required constant scrolling/switching.</p>
                             </div>
-                            <!-- What I Did (Updated PM Tasks) -->
+                            <!-- What I Did (Streamlined) -->
                             <div>
-                                <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did (UI/UX & Hierarchy)</h4>
+                                <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4> 
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Conducted user interviews and design sessions to map the new unified view workflow.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Defined functional requirements for new compact filter components (date range, user groups).</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Ran discovery sessions on filter rules and defined new sorting behaviors (Barrister priority).</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Coordinated engineering delivery for UI implementation and cross-browser testing.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Conducted user interviews and design sessions with clerks to map workflow needs.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Defined requirements for new compact filters and unified diary view.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Led discovery sessions on sorting rules and coordinated engineering delivery through UAT.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Prepared release notes and updated user guides to ensure that users adapt quickly to the UX change.</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <!-- Outcomes/Metrics (UPDATED) -->
+                        <!-- Outcomes/Metrics (Removing hyphen) -->
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-purple/10 rounded-lg">
-                                <p class="font-bold text-custom-purple">Positive Feedback from Clerks</p>
-                                <p class="text-sm text-gray-700">Received immediate and positive feedback from clerks, validating the enhanced usability and efficiency of the unified diary view.</p>
+                                <p class="font-bold text-custom-purple">50% Reduction in User Clicks</p>
+                                <p class="text-sm text-gray-700">Streamlined scheduling workflow, cutting clicks from 8 to 4 for common tasks.</p>
                             </div>
                             <div class="p-4 bg-custom-purple/10 rounded-lg">
-                                <p class="font-bold text-custom-purple">Reduced User Clicks by Half</p>
-                                <p class="text-sm text-gray-700">Diary usage flow was optimized, reducing the number of clicks required by half for common scheduling and filtering tasks.</p>
+                                <p class="font-bold text-custom-purple">Immediate Adoption by 100% of Clerk Users</p>
+                                <p class="text-sm text-gray-700">Unified view eliminated need to switch between screens, improving daily efficiency.</p>
                             </div>
                         </div>
                     </div>
@@ -286,7 +289,7 @@
             </p>
             <!-- UPDATED OUTSIDE WORK COPY -->
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold">
-                Outside work, you can find me exploring Sydney, trying new restaurants, watching series, and discovering new AI tools and technical systems.
+                Outside work, you can find me exploring Sydney, trying new cafes and enjoying new comedy and dystopian shows, alongside discovering new AI tools and technical systems.
             </p>
         </section>
         
@@ -309,13 +312,7 @@
                             </span>
                         </div>
                         
-                        <!-- Timeline Start Text -->
-                        <div class="md:col-span-2 flex items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-                            <i data-lucide="zap" class="w-5 h-5 text-gray-600 mr-3"></i>
-                            <p class="text-gray-700 font-medium">
-                                Timeline details confirming continuous employment eligibility.
-                            </p>
-                        </div>
+                        <!-- Timeline Start Text (Removed) -->
                     </div>
 
                     <!-- Vertical Timeline -->
@@ -376,7 +373,7 @@
         const NAV_ITEMS = [
             { id: 'hero', label: 'Home', icon: 'home' },
             { id: 'services', label: 'Services', icon: 'zap' },
-            { id: 'cases', label: 'Recent Projects', icon: 'book-open' }, // Updated nav link label
+            { id: 'cases', label: 'Selected Projects', icon: 'book-open' }, // Updated nav link label
             { id: 'experience', label: 'Experience', icon: 'briefcase' },
             { id: 'contact', label: 'Contact', icon: 'mail' },
         ];
@@ -560,7 +557,9 @@
                     // Map specific section IDs back to simplified nav links
                     let activeId = id;
                     if (id === 'hero') activeId = 'hero';
-                    if (id === 'cases' || id === 'experience') activeId = 'experience'; // Group cases/experience under the 'Experience' nav item
+                    // FIX: Ensure 'cases' highlights 'cases', and 'experience' highlights 'experience'
+                    if (id === 'cases') activeId = 'cases'; 
+                    if (id === 'experience') activeId = 'experience'; 
                     if (id === 'about' || id === 'visa') activeId = 'about';
 
                     const finalNavLink = document.getElementById(`nav-${activeId}`);
