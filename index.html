@@ -45,6 +45,9 @@
         .photo-block img {
             /* Keep the image sharp and contained within the frame */
             border-radius: 12px;
+            /* Ensures image maintains ratio while filling its clipped container */
+            object-fit: cover; 
+            aspect-ratio: 1/1; /* Enforce square aspect ratio for the frame */
         }
         
         /* Utility classes from Lucide are dynamically applied later */
@@ -281,8 +284,9 @@
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
                 I love solving messy product problems and turning them into simple, delightful user experiences. I thrive in fast-moving teams where I can connect the dots between user needs, engineering reality, and stakeholder vision.
             </p>
+            <!-- UPDATED OUTSIDE WORK COPY -->
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold">
-                Outside work, I enjoy trying new restaurants and watching series, alongside learning about AI tools and building small apps.
+                Outside work, you can find me exploring Sydney, trying new restaurants, watching series, and discovering new AI tools and technical systems.
             </p>
         </section>
         
