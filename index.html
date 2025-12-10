@@ -32,9 +32,13 @@
         .content-card {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
-
-        /* --- Custom Photo Container styles removed, replaced by Tailwind utilities in HTML --- */
-
+        
+        /* Custom Photo Layering Effect (No longer used, but keeping definitions clean) */
+        .photo-block {
+            /* Removed custom styles for cleaner, text-focused layout */
+            display: none; 
+        }
+        
         /* Utility classes from Lucide are dynamically applied later */
     </style>
     <!-- Tailwind Configuration for custom colors -->
@@ -46,18 +50,19 @@
                         'custom-purple': '#8B5CF6',
                         'custom-teal': '#2DD4BF',
                         'custom-yellow': '#FBBF24',
+                        'brand-dark': '#1F2937', /* Dark gray/black for main text */
                     },
                 },
             },
         }
     </script>
 </head>
-<body class="bg-gradient-to-br from-green-50 via-yellow-50 to-blue-50 antialiased">
+<body class="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 antialiased">
 
     <!-- 1. NAVIGATION BAR (Sticky & Dynamic) -->
-    <nav id="nav-bar" class="p-4 shadow-xl sticky top-0 z-20 border-b border-gray-100/50">
+    <nav id="nav-bar" class="p-4 shadow-lg sticky top-0 z-20 border-b border-gray-100">
         <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap">
-            <a href="#intro" class="text-xl font-bold text-gray-800 tracking-wide hover:text-gray-900 transition-colors" onclick="scrollToSection('intro', event)">
+            <a href="#hero" class="text-xl font-bold text-brand-dark tracking-wide hover:text-custom-purple transition-colors" onclick="scrollToSection('hero', event)">
                 Ida Espineda
             </a>
             <div id="nav-links" class="flex space-x-2 sm:space-x-4">
@@ -69,126 +74,198 @@
     <!-- 2. MAIN CONTENT AREA -->
     <main class="mx-auto">
 
-        <!-- A. INTRO SECTION -->
-        <section id="intro" class="p-6 md:p-12 pt-24 mb-32 max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-12 md:space-y-0 md:space-x-16">
+        <!-- 2.1. HERO SECTION (PHOTO REMOVED) -->
+        <section id="hero" class="p-6 md:p-16 pt-32 mb-20 max-w-5xl mx-auto text-center">
+            <div class="grid grid-cols-1 gap-16 items-center">
                 
-                <!-- Profile Photo (UPDATED - Layered, Asymmetrical Frame) -->
-                <div class="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0 order-1 md:order-2 group cursor-pointer">
-                    <!-- Layer 1: Colored background block (Asymmetrical/Offset) -->
-                    <div class="absolute inset-0 bg-custom-teal/40 rounded-3xl transform translate-x-3 translate-y-3 rotate-[-3deg] shadow-xl transition-all duration-500 group-hover:rotate-[0deg] group-hover:translate-x-0 group-hover:translate-y-0"></div>
-
-                    <!-- Layer 2: Photo itself (Layered on top) -->
-                    <div class="relative w-full h-full p-2 bg-white rounded-3xl shadow-2xl border-2 border-custom-teal/70 transform group-hover:scale-105 transition-transform duration-500">
-                        <img 
-                            src="Ida Photo.jpg" 
-                            alt="Ma. Ida G. Espineda Profile" 
-                            class="w-full h-full object-cover rounded-2xl"
-                            onerror="this.onerror=null; this.src='https://placehold.co/320x320/cccccc/333333?text=Ida+Photo';"
-                        >
-                    </div>
-                </div>
-                
-                <!-- Intro Text and CTAs -->
-                <div class="max-w-xl flex-1 order-2 md:order-1">
-                    <h1 class="text-6xl md:text-8xl font-extrabold text-gray-900 mb-6 tracking-tighter leading-tight">
-                        Hi. I'm Ida! 
-                        <span class="block text-custom-purple font-medium text-5xl md:text-6xl mt-2">
-                            Product and Project Manager.
+                <!-- Left Side: Headline and Text (Now centered) -->
+                <div class="order-2 md:order-1 max-w-3xl mx-auto">
+                    <h1 class="text-6xl md:text-8xl font-extrabold text-brand-dark mb-6 tracking-tight leading-none">
+                        Hi, I’m Ida.
+                        <span class="block text-custom-purple font-extrabold text-5xl md:text-6xl mt-4">
+                            Product & Project Manager.
                         </span>
                     </h1>
                     
-                    <!-- Professional Summary -->
-                    <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
-                        I'm a seasoned <strong>Product and Project Manager</strong> with over 7 years of hands-on experience in building and scaling SaaS, e-commerce, and digital platforms. I love diving deep into user needs, mapping out clear product roadmaps, and leading dynamic teams through the entire agile delivery cycle. My goal is always to deliver impactful features that drive adoption, growth, and real business value!
+                    <p class="text-xl md:text-2xl text-gray-700 mb-6 font-medium leading-relaxed">
+                        I focus on helping teams **build clear, user-centred digital products** and am passionate about shipping efficient outcomes.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
-                        <!-- CTA 1: View Work -->
-                        <button
-                            onclick="scrollToSection('work')"
-                            class="px-6 py-2 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-custom-purple transition-all duration-300 transform hover:scale-[1.02] border-b-2 border-gray-900 hover:border-purple-800 text-base"
-                        >
-                            View Work & Skills →
-                        </button>
-                        
-                        <!-- CTA 2: Download Resume -->
-                        <a
-                            href="#" 
-                            download="Ida_Espineda_Resume.pdf"
-                            class="flex items-center justify-center space-x-2 px-6 py-2 bg-custom-yellow text-gray-800 font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-[1.02] border-b-2 border-custom-yellow hover:border-yellow-600 text-base"
-                        >
+                    <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
+                        I bring <strong>7+ years of hands-on experience across SaaS, e-commerce, and operations.</strong> I strive to simplify complexity and optimize processes wherever I work.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center">
+                        <!-- CTA 1: Download Resume -->
+                        <a href="#" download="Ida_Espineda_Resume.pdf" class="flex items-center justify-center space-x-2 px-6 py-3 bg-custom-yellow text-brand-dark font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300">
                             <i data-lucide="download" class="w-5 h-5"></i>
                             <span>Download Resume</span>
                         </a>
+                        
+                        <!-- CTA 2: Contact Me -->
+                        <button onclick="scrollToSection('contact')" class="flex items-center justify-center space-x-2 px-6 py-3 bg-brand-dark text-white font-semibold rounded-lg shadow-md hover:bg-custom-purple transition-all duration-300">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span>Contact Me</span>
+                        </button>
                     </div>
+                </div>
+
+                <!-- Right Side: Photo with Modern Frame (REMOVED) -->
+                <div class="photo-block hidden"></div>
+            </div>
+        </section>
+
+        <!-- 2.2. WHAT I DO / SERVICES -->
+        <section id="services" class="p-6 md:p-16 py-20 max-w-6xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">What I Deliver</h2>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Services Cards rendered by JS -->
+            </div>
+        </section>
+
+        <!-- 2.3. CASE STUDIES -->
+        <section id="cases" class="p-6 md:p-16 py-20 bg-white/70 max-w-full">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Case Studies: Delivering Scalable Outcomes</h2>
+                
+                <!-- Case Study 1: Outlook Calendar Integration (Project 1) -->
+                <div class="mb-16 p-8 md:p-12 bg-gray-50 rounded-xl shadow-xl border-l-8 border-custom-purple content-card">
+                    <h3 class="text-3xl font-bold text-custom-purple mb-4">Outlook Calendar Integration (Jul 2023 – Feb 2024)</h3>
+                    <div class="flex flex-wrap text-sm text-gray-600 mb-6 space-x-4">
+                        <span class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-1 text-gray-500"></i> Role: Product Manager</span>
+                        <span class="flex items-center"><i data-lucide="layers" class="w-4 h-4 mr-1 text-gray-500"></i> Company: BarBooks Australia (Legal SaaS)</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2 space-y-6">
+                            <!-- Problem -->
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
+                                <p class="text-gray-700">Barristers and clerks manually updated schedules in both Outlook and BarBooks, causing **double bookings, missing appointments, and significant administrative burden**. This reduced productivity and increased the risk of costly errors due to data inconsistency.</p>
+                            </div>
+                            <!-- What I Did -->
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4>
+                                <ul class="list-none pl-0 space-y-1 text-gray-700">
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Defined precise sync logic (one-way/two-way) and managed data mapping between platforms.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Led technical discovery, choosing **Microsoft Graph API (OAuth 2.0)** for secure, real-time synchronization.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Designed the conflict resolution logic and implemented a sync queuing system to handle API rate limits.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Coordinated phased rollout, user training, and UAT to identify and resolve edge cases (e.g., deleted bookings).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Outcomes/Metrics -->
+                        <div class="md:col-span-1 space-y-4">
+                            <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
+                            <div class="p-4 bg-custom-teal/10 rounded-lg">
+                                <p class="font-bold text-custom-teal">Goal Achieved: Seamless Sync</p>
+                                <p class="text-sm text-gray-700">Eliminated the need for duplicate entry, ensuring **real-time visibility** and **reduced scheduling conflicts** across the user base.</p>
+                            </div>
+                            <div class="p-4 bg-custom-teal/10 rounded-lg">
+                                <p class="font-bold text-custom-teal">Improved Productivity</p>
+                                <p class="text-sm text-gray-700">Significantly reduced the administrative burden on clerks and barristers, allowing them to focus on legal work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: Diary Redesign UI Revamp for Clerk View (UPDATED CONTENT) -->
+                <div class="p-8 md:p-12 bg-gray-50 rounded-xl shadow-xl border-l-8 border-custom-teal content-card">
+                    <!-- Title updated -->
+                    <h3 class="text-3xl font-bold text-custom-teal mb-4">Diary Redesign: UI Revamp for Clerk View</h3>
+                    <div class="flex flex-wrap text-sm text-gray-600 mb-6 space-x-4">
+                        <span class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-1 text-gray-500"></i> Role: Product Manager</span>
+                        <span class="flex items-center"><i data-lucide="layers" class="w-4 h-4 mr-1 text-gray-500"></i> Company: BarBooks Australia (Legal SaaS)</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2 space-y-6">
+                            <!-- Problem -->
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
+                                <p class="text-gray-700">The legacy Clerk Diary View was inefficient, using excessive screen space and preventing clerks from viewing necessary scheduling and user information at a glance. This poor UX impacted usability and required constant scrolling/switching.</p>
+                                <p class="text-sm text-gray-500 mt-2">HubSpot linked tickets included concerns over layout, filter functionality, and visibility (e.g., #3 email re TALAW diary, Diary suggestions!).</p>
+                            </div>
+                            <!-- What I Did -->
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did (UI/UX & Hierarchy)</h4>
+                                <ul class="list-none pl-0 space-y-1 text-gray-700">
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Led UI/UX redesign to maximize screen space (full row height) and consolidate user filters into a compact, space-saving UI.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Unified the Diaries table to list all users (Barristers + Non-Barristers) in one view, removing cluttering sub-tabs.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Implemented advanced, compact filter components with search bars, clear CTAs, and optimized selection display rules (number vs. name).</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Defined new sorting behaviors to ensure Barristers maintain priority while still allowing detailed filtering (e.g., Sort by Last Name).</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Redesigned the collateral elements (Booking Button, Toolbar, Settings, Export) for better alignment and modern aesthetics.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Outcomes/Metrics (UPDATED) -->
+                        <div class="md:col-span-1 space-y-4">
+                            <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
+                            <div class="p-4 bg-custom-purple/10 rounded-lg">
+                                <p class="font-bold text-custom-purple">Reduced Clicks & Friction</p>
+                                <p class="text-sm text-gray-700">Diary usage flow for clerks was optimized, **reducing the number of clicks required by half** for common scheduling tasks.</p>
+                            </div>
+                            <div class="p-4 bg-custom-purple/10 rounded-lg">
+                                <p class="font-bold text-custom-purple">Positive User Feedback</p>
+                                <p class="text-sm text-gray-700">Received general positive customer feedback confirming enhanced usability and efficiency across the unified view.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 2.4. EXPERIENCE TIMELINE (Combines Experience and Education) -->
+        <section id="experience" class="p-6 md:p-16 py-20 max-w-6xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Professional Journey</h2>
+            
+            <div id="experience-timeline-container" class="relative border-l-4 border-gray-300 pl-8 space-y-12">
+                
+                <!-- Timeline Items rendered by JS -->
+
+                <!-- Additional Experience (List) -->
+                <div id="additional-experience-container" class="pt-6">
+                    <!-- Additional Experience rendered by JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2.5. SKILLS SECTION -->
+        <section id="skills" class="p-6 md:p-16 py-20 bg-custom-purple/5 max-w-full">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">My Core Capabilities</h2>
+                <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Skills Cards rendered by JS -->
                 </div>
             </div>
         </section>
 
-        <!-- B. WORK SECTION -->
-        <div class="pb-12">
-            <section id="work" class="space-y-20 p-6 md:p-12 pt-16 max-w-6xl mx-auto">
-                
-                <!-- Key Experience -->
-                <div>
-                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
-                        <i data-lucide="briefcase" class="w-8 h-8 mr-3 text-custom-purple"></i>
-                        Key Experience
-                    </h2>
-                    <div id="experience-list" class="grid grid-cols-1 gap-8">
-                        <!-- Experience Items rendered by JS -->
-                    </div>
-                </div>
+        <!-- 2.6. ABOUT ME (Human & Friendly) -->
+        <section id="about" class="p-6 md:p-16 py-20 max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold text-brand-dark mb-8">More About Ida</h2>
+            
+            <!-- Small Photo Placeholder/Reused asset -->
+            <div class="w-24 h-24 rounded-full mx-auto mb-6 bg-custom-teal/20 p-1">
+                <img src="Ida Photo.jpg" alt="Ida" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/96x96/cccccc/333333?text=Ida';" />
+            </div>
 
-                <!-- Technical Expertise Grid -->
-                <div>
-                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
-                        <i data-lucide="zap" class="w-8 h-8 mr-3 text-custom-purple"></i>
-                        Software & Technical Expertise
-                    </h2>
-                    <div id="tech-expertise-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <!-- Tech Cards rendered by JS -->
-                    </div>
-                </div>
-
-                <!-- Education & Certifications -->
-                <div>
-                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
-                        <i data-lucide="book-open" class="w-8 h-8 mr-3 text-custom-purple"></i>
-                        Education & Certifications
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white p-8 rounded-2xl content-card border border-gray-100">
-                        <div id="education-section" class="space-y-4">
-                            <!-- Education rendered by JS -->
-                        </div>
-
-                        <div id="certifications-section" class="space-y-4">
-                            <!-- Certifications rendered by JS -->
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Additional Experience -->
-                <div>
-                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
-                        <i data-lucide="layers" class="w-8 h-8 mr-3 text-custom-purple"></i>
-                        Additional Experience
-                    </h2>
-                    <div id="additional-experience-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Additional Experience rendered by JS -->
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- C. VISA SECTION -->
-        <div class="pb-12">
-            <section id="visa" class="p-6 md:p-12 pt-16 max-w-6xl mx-auto mb-20">
-                <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
-                    <i data-lucide="map" class="w-8 h-8 mr-3 text-custom-purple"></i>
-                    Australian Work Authorization
-                </h2>
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                I love solving messy product problems and turning them into simple, delightful user experiences. I thrive in fast-moving teams where I can connect the dots between **user needs, engineering reality, and stakeholder vision**.
+            </p>
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold">
+                Outside work, I enjoy trying new restaurants and watching series, alongside learning about AI tools and building small apps.
+            </p>
+        </section>
+        
+        <!-- 2.7. WORK RIGHTS SECTION (Visa) -->
+        <section id="visa" class="p-6 md:p-16 py-20 bg-custom-teal/5 max-w-full">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-8 text-center">Australian Work Authorization</h2>
                 
                 <div class="p-6 md:p-10 rounded-3xl shadow-2xl border-t-8 border-custom-teal bg-white content-card">
 
@@ -220,8 +297,34 @@
                         <!-- Timeline Items rendered by JS -->
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
+        <!-- 2.8. CONTACT SECTION -->
+        <section id="contact" class="p-6 md:p-16 py-20 max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-extrabold text-brand-dark mb-4">Let's Connect and Build Together.</h2>
+            <p class="text-xl text-gray-700 mb-10">I’m currently open to new product challenges. Reach out for a chat!</p>
+
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <!-- Email -->
+                <a href="mailto:igespineda@gmail.com" class="flex items-center justify-center space-x-2 px-6 py-3 bg-brand-dark text-white font-semibold rounded-lg shadow-xl hover:bg-custom-purple transition-all duration-300">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span>Email Me</span>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ida-espineda-331a6295/" target="_blank" class="flex items-center justify-center space-x-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-xl hover:bg-blue-700 transition-all duration-300">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    <span>Connect on LinkedIn</span>
+                </a>
+
+                <!-- Calendly (Placeholder) -->
+                <a href="#" target="_blank" class="flex items-center justify-center space-x-2 px-6 py-3 bg-gray-200 text-brand-dark font-semibold rounded-lg shadow-xl hover:bg-gray-300 transition-all duration-300">
+                    <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                    <span>Book a Quick Chat</span>
+                </a>
+            </div>
+        </section>
 
     </main>
 
@@ -245,69 +348,46 @@
     <!-- 4. JAVASCRIPT LOGIC (Data, Rendering, and Scrolling) -->
     <script>
         // --- DATA ---
+        // Updated navigation items to match new section IDs
         const NAV_ITEMS = [
-            { id: 'intro', label: 'About Me', icon: 'home' },
-            { id: 'work', label: 'Experience & Skills', icon: 'briefcase' },
-            { id: 'visa', label: 'Work Rights', icon: 'layers' },
+            { id: 'hero', label: 'Home', icon: 'home' },
+            { id: 'services', label: 'Services', icon: 'zap' },
+            { id: 'cases', label: 'Case Studies', icon: 'book-open' },
+            { id: 'experience', label: 'Experience', icon: 'briefcase' },
+            { id: 'contact', label: 'Contact', icon: 'mail' },
         ];
 
-        const WORK_EXPERIENCE = [
-            {
-                title: 'Product Manager',
-                company: 'BarBooks Australia (Legal SaaS)',
-                date: 'Jul 2022 – Present',
-                highlights: [
-                    'Own end-to-end product lifecycle for legal fintech SaaS serving <strong>2,000+ users</strong> across 7 chambers',
-                    'Lead product discovery using <strong>Jira Discovery</strong>, define BRDs/PRDs via <strong>Jira & Confluence</strong>',
-                    'Act as Product Owner and Scrum Master, running agile ceremonies and ensuring delivery velocity',
-                    'Key Projects: Invoicing & Reporting, Outlook Calendar Integration, Dynamics 365 Integration, MS SSO & 2FA, GoodData Analytics',
-                ],
-            },
-            {
-                title: 'Business Product Lead – Shopee Ads',
-                company: 'Shopee Philippines (eCommerce Platform)',
-                date: 'Nov 2020 – Jul 2022',
-                highlights: [
-                    'Country lead for Shopee Ads across Marketplace, Mall/Brand, and Cross-border segments',
-                    'Collaborated with Singapore regional PMs to execute product launches, A/B tests, and UATs',
-                    'Spearheaded go-to-market programs that <strong>doubled ad revenue YOY</strong>',
-                    'Built product usage dashboards, managed 18-person paid ads team, and optimized operations',
-                    'Led program management initiatives using product and user data to design programs that improved ads adoption and revenue',
-                ],
-            },
+        const SERVICES_DATA = [
+            { title: 'Product Management', description: 'Defining roadmaps, gathering requirements, creating user stories, and overseeing feature delivery.', icon: 'rocket' },
+            { title: 'Project Execution', description: 'Planning, scheduling, risk management, cross-team coordination, and ensuring timely project execution.', icon: 'list-checks' },
+            { title: 'Process & Operations', description: 'Optimising workflows, improving team efficiency, and standardizing processes to reduce manual work.', icon: 'settings-2' },
+            { title: 'Tools & Systems', description: 'System setup, deep JIRA/Confluence usage, system adoption, and utilizing modern AI tools.', icon: 'layers' },
         ];
-
-        const ADDITIONAL_EXPERIENCE = [
-            { title: 'Business Development Officer', company: 'PAL Express (Airline)', date: 'Apr 2018 – May 2020' },
-            { title: 'Business Development', company: 'Guide to the Philippines (Travel Platform)', date: 'Jan 2019 – Apr 2020' },
-            { title: 'Project Development Specialist', company: 'Filinvest Land Inc.', date: 'Aug 2015 – Feb 2018' },
+        
+        const SKILLS_DATA = [
+            { title: 'Product & Delivery', tags: ['User Stories', 'Discovery', 'Research', 'MVP Design', 'Roadmaps', 'JIRA/Confluence'] },
+            { title: 'Project & Ops', tags: ['Process Design', 'Planning', 'Risk Management', 'Stakeholder Alignment', 'Agile/Scrum'] },
+            { title: 'Tools & Systems', tags: ['JIRA', 'Notion', 'HubSpot', 'Vercel', 'GoodData', 'MS SSO'] },
+            { title: 'Tech Comfort', tags: ['APIs', 'CMS', 'Basic No-Code', 'SQL', 'Analytics', 'AI Workflows'] },
         ];
-
-        const TECH_EXPERTISE = [
-            { name: 'Jira Ecosystem', desc: 'Jira, JSM, Jira Discovery, Confluence, JQL' },
-            { name: 'Design & Prototyping', desc: 'Figma, Zeplin, Miro' },
-            { name: 'AI Tools', desc: 'Claude, Gemini, CursorAI, ChatGPT' },
-            { name: 'Data & Analytics', desc: 'SQL, Excel, GoodData, BI Dashboards' },
-            { name: 'Agile Methods', desc: 'Scrum, Kanban, Product Delivery' },
-            { name: 'Integrations', desc: 'Outlook, Dynamics 365, MS SSO, 2FA' },
-            { name: 'Product Discovery', desc: 'User Research, Customer Interviews, UAT' },
-            { name: 'Growth & Strategy', desc: 'Roadmapping, A/B Testing, KPI Tracking' },
-        ];
-
-        const EDUCATION = [
-            { title: 'Bachelor of Science, Economics', company: 'University of the Philippines, Diliman', date: '2011-2015' },
-        ];
-
-        const CERTIFICATIONS = [
-            '<strong>AI for Product Management</strong> – Pendo.io (Mar 2025)',
-            '<strong>SQL: From Zero to Hero</strong> – Udemy (Mar 2025)',
-        ];
-
+        
         const VISA_TIMELINE = [
             { icon: 'map', label: 'Current Status', date: 'Immediate', desc: '482 Visa with immediate 6-month open work capacity upon resignation.' },
             { icon: 'calendar', label: 'May 2026', date: 'Milestone', desc: "Automatic transition to Bridging Visa A (Partner's 186 PR application)." },
             { icon: 'check-circle', label: 'Employment Ensured', date: 'Outcome', desc: 'Continuous employment eligibility confirmed for long-term roles.' },
         ];
+        
+        // ADDED 2 MORE EXPERIENCE ITEMS
+        const FULL_EXPERIENCE_DATA = [
+            { title: 'Product Manager', company: 'BarBooks Australia (Legal SaaS)', date: 'Jul 2022 – Present', icon: 'briefcase', color: 'custom-purple', achievements: ['Owned end-to-end product lifecycle for legal fintech SaaS serving 2,000+ users.', 'Lead product discovery, defining BRDs/PRDs via Jira & Confluence.'] },
+            { title: 'Business Product Lead – Shopee Ads', company: 'Shopee Philippines (eCommerce Platform)', date: 'Nov 2020 – Jul 2022', icon: 'briefcase', color: 'custom-purple', achievements: ['Spearheaded go-to-market programs that doubled ad revenue YOY.', 'Managed paid ads team and optimized operations using product and user data.'] },
+            // New items added here
+            { title: 'Business Development Officer', company: 'PAL Express (Airline)', date: 'Apr 2018 – May 2020', icon: 'briefcase', color: 'custom-purple', achievements: ['Focused on strategy and development for key airline projects.'] },
+            { title: 'Project Development Specialist', company: 'Filinvest Land Inc.', date: 'Aug 2015 – Feb 2018', icon: 'briefcase', color: 'custom-purple', achievements: ['Managed and coordinated project phases for major real estate developments.'] },
+            // Education remains the last item
+            { title: 'Bachelor of Science, Economics', company: 'University of the Philippines, Diliman', date: '2011–2015', icon: 'graduation-cap', color: 'custom-teal', achievements: ['Certified in AI for Product Management (Pendo.io) & SQL (Udemy).'] },
+        ];
+
 
         // --- UTILITY FUNCTIONS ---
 
@@ -315,13 +395,16 @@
             if (event) event.preventDefault();
             const element = document.getElementById(id);
             if (element) {
-                const y = element.getBoundingClientRect().top + window.scrollY - 70; // Offset for sticky nav
+                // Determine offset based on whether it's the hero section or a deep section
+                const offset = (id === 'hero' || id === 'intro') ? 0 : 70; 
+                const y = element.getBoundingClientRect().top + window.scrollY - offset; 
                 window.scrollTo({ top: y, behavior: 'smooth' });
                 window.history.pushState(null, '', `#${id}`);
             }
         }
 
         function createIcon(name, classes = 'w-4 h-4 mr-1') {
+            // Lucide icons are injected via the script below
             return `<i data-lucide="${name}" class="${classes}"></i>`;
         }
 
@@ -341,85 +424,41 @@
             `).join('');
             navLinksContainer.innerHTML = navHtml;
         }
-
-        function renderExperience() {
-            const container = document.getElementById('experience-list');
-            container.innerHTML = WORK_EXPERIENCE.map(job => `
-                <div class="mb-8 p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:translate-y-[-2px] content-card">
-                    <div class="flex justify-between items-start mb-3 flex-wrap">
-                        <div>
-                            <h4 class="text-xl font-bold text-gray-900">${job.title}</h4>
-                            <p class="text-sm text-gray-600 font-medium mt-1">${job.company}</p>
-                        </div>
-                        <p class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0 bg-custom-yellow/20 px-3 py-1 rounded-full">${job.date}</p>
+        
+        function renderServices() {
+            const container = document.getElementById('services-grid');
+            container.innerHTML = SERVICES_DATA.map(service => `
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-custom-purple hover:border-custom-teal transition-all duration-300 content-card">
+                    <div class="w-10 h-10 bg-custom-purple/10 rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="${service.icon}" class="w-6 h-6 text-custom-purple"></i>
                     </div>
-                    <ul class="list-none pl-0 mt-3 space-y-2">
-                        ${job.highlights.map(h => `
-                            <li class="flex items-start text-sm text-gray-700">
-                                <i data-lucide="dot" class="text-custom-purple w-5 h-5 mr-2 flex-shrink-0 mt-1"></i>
-                                <span>${h}</span>
-                            </li>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">${service.title}</h3>
+                    <p class="text-gray-600 text-sm">${service.description}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderSkills() {
+            const container = document.getElementById('skills-grid');
+            container.innerHTML = SKILLS_DATA.map(skillGroup => `
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-custom-teal hover:border-custom-purple transition-all duration-300 content-card">
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">${skillGroup.title}</h3>
+                    <div class="flex flex-wrap gap-2">
+                        ${skillGroup.tags.map(tag => `
+                            <span class="text-xs font-medium bg-gray-200 text-gray-700 px-3 py-1 rounded-full">${tag}</span>
                         `).join('')}
-                    </ul>
-                </div>
-            `).join('');
-        }
-
-        function renderTechExpertise() {
-            const container = document.getElementById('tech-expertise-grid');
-            container.innerHTML = TECH_EXPERTISE.map(tech => `
-                <div class="p-4 bg-custom-teal/10 border border-custom-teal/20 rounded-xl shadow-md transition-shadow duration-200 hover:shadow-lg">
-                    <h4 class="font-semibold text-gray-800">${tech.name}</h4>
-                    <p class="text-xs text-gray-500 mt-1">${tech.desc}</p>
-                </div>
-            `).join('');
-        }
-
-        function renderEducation() {
-            const eduContainer = document.getElementById('education-section');
-            const certContainer = document.getElementById('certifications-section');
-
-            eduContainer.innerHTML = `
-                <h4 class="text-xl font-bold text-gray-800 border-b pb-2 border-gray-100 flex items-center">
-                    <i data-lucide="book-open" class="w-5 h-5 mr-2 text-custom-purple"></i> Education
-                </h4>
-                ${EDUCATION.map(edu => `
-                    <div class="p-3 border-l-4 border-custom-purple/70 bg-gray-50 rounded">
-                        <p class="font-semibold text-gray-800">${edu.title}</p>
-                        <p class="text-sm text-gray-600">${edu.company}</p>
-                        <p class="text-xs text-gray-500">${edu.date}</p>
                     </div>
-                `).join('')}
-            `;
-
-            certContainer.innerHTML = `
-                <h4 class="text-xl font-bold text-gray-800 border-b pb-2 border-gray-100 flex items-center">
-                    <i data-lucide="zap" class="w-5 h-5 mr-2 text-custom-purple"></i> Certifications
-                </h4>
-                <ul class="list-none pl-0 mt-3 space-y-3">
-                    ${CERTIFICATIONS.map(cert => `
-                        <li class="flex items-center text-sm text-gray-700 p-2 bg-custom-purple/10 rounded-lg">
-                            <i data-lucide="check-circle" class="w-4 h-4 mr-2 flex-shrink-0 text-custom-purple"></i>
-                            <span>${cert}</span>
-                        </li>
-                    `).join('')}
-                </ul>
-            `;
-        }
-
-        function renderAdditionalExperience() {
-            const container = document.getElementById('additional-experience-grid');
-            container.innerHTML = ADDITIONAL_EXPERIENCE.map(job => `
-                <div class="p-4 bg-white border border-gray-200 rounded-xl shadow-md hover:border-custom-purple/70 transition-colors duration-200">
-                    <h4 class="font-semibold text-gray-800">${job.title}</h4>
-                    <p class="text-sm text-gray-600">${job.company}</p>
-                    <p class="text-xs text-gray-500 mt-1">${job.date}</p>
                 </div>
             `).join('');
         }
+
 
         function renderVisaTimeline() {
             const container = document.getElementById('visa-timeline-container');
+            if (!container) {
+                console.error("Container #visa-timeline-container not found.");
+                return;
+            }
             container.innerHTML += VISA_TIMELINE.map(item => `
                 <div class="mb-8 flex items-start relative">
                     <!-- Timeline Dot/Icon -->
@@ -440,20 +479,52 @@
                 </div>
             `).join('');
         }
+
+        function renderTimelineExperience() {
+            const timelineContainer = document.getElementById('experience-timeline-container');
+            const additionalContainer = document.getElementById('additional-experience-container'); 
+
+            if (!timelineContainer || !additionalContainer) {
+                console.error("One or both experience containers not found: #experience-timeline-container or #additional-experience-container");
+                return; // Exit function if containers aren't found
+            }
+            
+            // Render all major roles and education
+            timelineContainer.innerHTML = FULL_EXPERIENCE_DATA.map(item => `
+                <div class="relative bg-white p-6 rounded-xl shadow-lg content-card hover:shadow-2xl transition-shadow duration-300">
+                    <span class="absolute -left-5 top-4 w-10 h-10 bg-${item.color} rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        <i data-lucide="${item.icon}" class="w-5 h-5"></i>
+                    </span>
+                    <h3 class="text-2xl font-bold text-brand-dark">${item.title}</h3>
+                    <p class="text-lg text-gray-700 mb-2">${item.company} | ${item.date}</p>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                        ${item.achievements.map(a => `<li>${a}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+
+             // Render Additional Experience separately (Note: Keeping this empty now since all relevant roles are in FULL_EXPERIENCE_DATA)
+             additionalContainer.innerHTML = '';
+        }
+
         
         // --- SCROLL OBSERVATION LOGIC ---
 
         function setupScrollSpy() {
             const navItems = document.querySelectorAll('.nav-item');
             const sections = [
-                document.getElementById('intro'),
-                document.getElementById('work'),
-                document.getElementById('visa')
+                document.getElementById('hero'),
+                document.getElementById('services'),
+                document.getElementById('cases'),
+                document.getElementById('experience'),
+                document.getElementById('contact'),
+                document.getElementById('about'),
+                document.getElementById('visa'),
             ];
 
             const observerOptions = {
                 root: null,
-                rootMargin: '-35% 0px -65% 0px', // Adjusted to activate when section is 35% down
+                rootMargin: '-35% 0px -65% 0px', // Activates when section is roughly in the middle of the viewport
                 threshold: 0,
             };
 
@@ -462,15 +533,22 @@
                     const id = entry.target.id;
                     const navLink = document.getElementById(`nav-${id}`);
 
-                    if (navLink) {
-                        if (entry.isIntersecting) {
-                            // Deactivate all links
-                            navItems.forEach(item => {
-                                item.classList.remove('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105');
-                            });
-                            // Activate current link
-                            navLink.classList.add('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105');
-                        }
+                    // Map specific section IDs back to simplified nav links
+                    let activeId = id;
+                    if (id === 'hero') activeId = 'hero';
+                    if (id === 'cases' || id === 'experience') activeId = 'experience'; // Group cases/experience under the 'Experience' nav item
+                    if (id === 'about' || id === 'visa') activeId = 'about';
+
+                    const finalNavLink = document.getElementById(`nav-${activeId}`);
+
+
+                    if (finalNavLink && entry.isIntersecting) {
+                        // Deactivate all links
+                        navItems.forEach(item => {
+                            item.classList.remove('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105');
+                        });
+                        // Activate current link
+                        finalNavLink.classList.add('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105');
                     }
                 });
             }, observerOptions);
@@ -484,10 +562,9 @@
         // --- INITIALIZATION ---
         window.onload = function() {
             renderNav();
-            renderExperience();
-            renderTechExpertise();
-            renderEducation();
-            renderAdditionalExperience();
+            renderServices();
+            renderSkills();
+            renderTimelineExperience();
             renderVisaTimeline();
             
             // Replaces data-lucide attributes with SVG icons
