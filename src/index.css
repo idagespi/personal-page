@@ -1,9 +1,0 @@
-/* Assumes Tailwind is integrated via PostCSS setup */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom font definition for Inter - ensures it's loaded globally */
-body {
-  font-family: 'Inter', sans-serif;
-}
