@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ida Espineda | Product & Project Manager Portfolio</title>
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Define Inter as the primary font and set up base styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--tw-gradient-stops));
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        /* Custom Tailwind configuration to enable smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for the sticky nav to apply shadow and backdrop */
+        #nav-bar {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Generic content card styling */
+        .content-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Utility classes from Lucide are dynamically applied later */
+    </style>
+    <!-- Tailwind Configuration for custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-purple': '#8B5CF6',
+                        'custom-teal': '#2DD4BF',
+                        'custom-yellow': '#FBBF24',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-green-50 via-yellow-50 to-blue-50 antialiased">
+
+    <!-- 1. NAVIGATION BAR (Sticky & Dynamic) -->
+    <nav id="nav-bar" class="p-4 shadow-xl sticky top-0 z-20 border-b border-gray-100/50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap">
+            <a href="#intro" class="text-xl font-bold text-gray-800 tracking-wide hover:text-gray-900 transition-colors" onclick="scrollToSection('intro', event)">
+                Ida Espineda
+            </a>
+            <div id="nav-links" class="flex space-x-2 sm:space-x-4">
+                <!-- Links rendered by JS -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. MAIN CONTENT AREA -->
+    <main class="mx-auto">
+
+        <!-- A. INTRO SECTION -->
+        <section id="intro" class="p-6 md:p-12 pt-24 mb-32 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-12 md:space-y-0 md:space-x-16">
+                
+                <!-- Profile Photo -->
+                <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 order-1 md:order-2 p-4 bg-custom-teal/10 rounded-3xl shadow-2xl border-2 border-custom-teal">
+                    <img 
+                        src="Ida Photo.jpg" 
+                        alt="Ma. Ida G. Espineda Profile" 
+                        class="w-full h-full object-cover rounded-full shadow-lg transform transition-transform hover:scale-[1.03]"
+                        onerror="this.onerror=null; this.src='https://placehold.co/256x256/cccccc/333333?text=Ida+Photo';"
+                    >
+                </div>
+                
+                <!-- Intro Text and CTAs -->
+                <div class="max-w-xl flex-1 order-2 md:order-1">
+                    <h1 class="text-6xl md:text-8xl font-extrabold text-gray-900 mb-6 tracking-tighter leading-tight">
+                        Hi. I'm Ida! 
+                        <span class="block text-custom-purple font-medium text-5xl md:text-6xl mt-2">
+                            Product and Project Manager.
+                        </span>
+                    </h1>
+                    
+                    <!-- Professional Summary -->
+                    <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
+                        I'm a seasoned <strong>Product and Project Manager</strong> with over 7 years of hands-on experience in building and scaling SaaS, e-commerce, and digital platforms. I love diving deep into user needs, mapping out clear product roadmaps, and leading dynamic teams through the entire agile delivery cycle. My goal is always to deliver impactful features that drive adoption, growth, and real business value!
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                        <!-- CTA 1: View Work -->
+                        <button
+                            onclick="scrollToSection('work')"
+                            class="px-6 py-2 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-custom-purple transition-all duration-300 transform hover:scale-[1.02] border-b-2 border-gray-900 hover:border-purple-800 text-base"
+                        >
+                            View Work & Skills →
+                        </button>
+                        
+                        <!-- CTA 2: Download Resume -->
+                        <a
+                            href="#" 
+                            download="Ida_Espineda_Resume.pdf"
+                            class="flex items-center justify-center space-x-2 px-6 py-2 bg-custom-yellow text-gray-800 font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-[1.02] border-b-2 border-custom-yellow hover:border-yellow-600 text-base"
+                        >
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- B. WORK SECTION -->
+        <div class="pb-12">
+            <section id="work" class="space-y-20 p-6 md:p-12 pt-16 max-w-6xl mx-auto">
+                
+                <!-- Key Experience -->
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
+                        <i data-lucide="briefcase" class="w-8 h-8 mr-3 text-custom-purple"></i>
+                        Key Experience
+                    </h2>
+                    <div id="experience-list" class="grid grid-cols-1 gap-8">
+                        <!-- Experience Items rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- Technical Expertise Grid -->
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
+                        <i data-lucide="zap" class="w-8 h-8 mr-3 text-custom-purple"></i>
+                        Software & Technical Expertise
+                    </h2>
+                    <div id="tech-expertise-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Tech Cards rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- Education & Certifications -->
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
+                        <i data-lucide="book-open" class="w-8 h-8 mr-3 text-custom-purple"></i>
+                        Education & Certifications
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white p-8 rounded-2xl content-card border border-gray-100">
+                        <div id="education-section" class="space-y-4">
+                            <!-- Education rendered by JS -->
+                        </div>
+
+                        <div id="certifications-section" class="space-y-4">
+                            <!-- Certifications rendered by JS -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Experience -->
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
+                        <i data-lucide="layers" class="w-8 h-8 mr-3 text-custom-purple"></i>
+                        Additional Experience
+                    </h2>
+                    <div id="additional-experience-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Additional Experience rendered by JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- C. VISA SECTION -->
+        <div class="pb-12">
+            <section id="visa" class="p-6 md:p-12 pt-16 max-w-6xl mx-auto mb-20">
+                <h2 class="text-4xl font-extrabold mb-8 text-gray-900 flex items-center">
+                    <i data-lucide="map" class="w-8 h-8 mr-3 text-custom-purple"></i>
+                    Australian Work Authorization
+                </h2>
+                
+                <div class="p-6 md:p-10 rounded-3xl shadow-2xl border-t-8 border-custom-teal bg-white content-card">
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                        <!-- Status Card -->
+                        <div class="md:col-span-1 p-6 bg-custom-teal/10 border-2 border-custom-teal/50 rounded-xl shadow-inner flex flex-col items-center justify-center min-h-[150px]">
+                            <i data-lucide="check-circle" class="w-10 h-10 text-custom-teal mb-3"></i>
+                            <p class="text-xl font-bold text-custom-teal/90 text-center">
+                                Full Working Rights
+                            </p>
+                            <span class="text-sm text-custom-teal font-medium mt-1">
+                                No Sponsorship Transfer Required
+                            </span>
+                        </div>
+                        
+                        <!-- Timeline Start Text -->
+                        <div class="md:col-span-2 flex items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
+                            <i data-lucide="zap" class="w-5 h-5 text-gray-600 mr-3"></i>
+                            <p class="text-gray-700 font-medium">
+                                Timeline details confirming continuous employment eligibility.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Vertical Timeline -->
+                    <div id="visa-timeline-container" class="relative pt-4 pl-8">
+                        <!-- Vertical Line -->
+                        <div class="absolute top-0 bottom-0 left-3 w-1 bg-custom-teal/50 rounded-full"></div>
+                        <!-- Timeline Items rendered by JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- 3. FOOTER -->
+    <footer class="bg-gray-900 text-white p-6 mt-16">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <div class="text-sm font-light mb-4 sm:mb-0">
+                &copy; 2025 Ma. Ida G. Espineda.
+            </div>
+            <div class="flex space-x-6 text-sm">
+                <a href="mailto:igespineda@gmail.com" class="flex items-center hover:text-custom-yellow transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4 mr-1"></i> igespineda@gmail.com
+                </a>
+                <a href="tel:+61409033652" class="flex items-center hover:text-custom-yellow transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 mr-1"></i> +61 409 033 652
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 4. JAVASCRIPT LOGIC (Data, Rendering, and Scrolling) -->
+    <script>
+        // --- DATA ---
+        const NAV_ITEMS = [
+            { id: 'intro', label: 'About Me', icon: 'home' },
+            { id: 'work', label: 'Experience & Skills', icon: 'briefcase' },
+            { id: 'visa', label: 'Work Rights', icon: 'layers' },
+        ];
+
+        const WORK_EXPERIENCE = [
+            {
+                title: 'Product Manager',
+                company: 'BarBooks Australia (Legal SaaS)',
+                date: 'Jul 2022 – Present',
+                highlights: [
+                    'Own end-to-end product lifecycle for legal fintech SaaS serving <strong>2,000+ users</strong> across 7 chambers',
+                    'Lead product discovery using <strong>Jira Discovery</strong>, define BRDs/PRDs via <strong>Jira & Confluence</strong>',
+                    'Act as Product Owner and Scrum Master, running agile ceremonies and ensuring delivery velocity',
+                    'Key Projects: Invoicing & Reporting, Outlook Calendar Integration, Dynamics 365 Integration, MS SSO & 2FA, GoodData Analytics',
+                ],
+            },
+            {
+                title: 'Business Product Lead – Shopee Ads',
+                company: 'Shopee Philippines (eCommerce Platform)',
+                date: 'Nov 2020 – Jul 2022',
+                highlights: [
+                    'Country lead for Shopee Ads across Marketplace, Mall/Brand, and Cross-border segments',
+                    'Collaborated with Singapore regional PMs to execute product launches, A/B tests, and UATs',
+                    'Spearheaded go-to-market programs that <strong>doubled ad revenue YOY</strong>',
+                    'Built product usage dashboards, managed 18-person paid ads team, and optimized operations',
+                    'Led program management initiatives using product and user data to design programs that improved ads adoption and revenue',
+                ],
+            },
+        ];
+
+        const ADDITIONAL_EXPERIENCE = [
+            { title: 'Business Development Officer', company: 'PAL Express (Airline)', date: 'Apr 2018 – May 2020' },
+            { title: 'Business Development', company: 'Guide to the Philippines (Travel Platform)', date: 'Jan 2019 – Apr 2020' },
+            { title: 'Project Development Specialist', company: 'Filinvest Land Inc.', date: 'Aug 2015 – Feb 2018' },
+        ];
+
+        const TECH_EXPERTISE = [
+            { name: 'Jira Ecosystem', desc: 'Jira, JSM, Jira Discovery, Confluence, JQL' },
+            { name: 'Design & Prototyping', desc: 'Figma, Zeplin, Miro' },
+            { name: 'AI Tools', desc: 'Claude, Gemini, CursorAI, ChatGPT' },
+            { name: 'Data & Analytics', desc: 'SQL, Excel, GoodData, BI Dashboards' },
+            { name: 'Agile Methods', desc: 'Scrum, Kanban, Product Delivery' },
+            { name: 'Integrations', desc: 'Outlook, Dynamics 365, MS SSO, 2FA' },
+            { name: 'Product Discovery', desc: 'User Research, Customer Interviews, UAT' },
+            { name: 'Growth & Strategy', desc: 'Roadmapping, A/B Testing, KPI Tracking' },
+        ];
+
+        const EDUCATION = [
+            { title: 'Bachelor of Science, Economics', company: 'University of the Philippines, Diliman', date: '2011-2015' },
+        ];
+
+        const CERTIFICATIONS = [
+            '<strong>AI for Product Management</strong> – Pendo.io (Mar 2025)',
+            '<strong>SQL: From Zero to Hero</strong> – Udemy (Mar 2025)',
+        ];
+
+        const VISA_TIMELINE = [
+            { icon: 'map', label: 'Current Status', date: 'Immediate', desc: '482 Visa with immediate 6-month open work capacity upon resignation.' },
+            { icon: 'calendar', label: 'May 2026', date: 'Milestone', desc: "Automatic transition to Bridging Visa A (Partner's 186 PR application)." },
+            { icon: 'check-circle', label: 'Employment Ensured', date: 'Outcome', desc: 'Continuous employment eligibility confirmed for long-term roles.' },
+        ];
+
+        // --- UTILITY FUNCTIONS ---
+
+        function scrollToSection(id, event) {
+            if (event) event.preventDefault();
+            const element = document.getElementById(id);
+            if (element) {
+                const y = element.getBoundingClientRect().top + window.scrollY - 70; // Offset for sticky nav
+                window.scrollTo({ top: y, behavior: 'smooth' });
+                window.history.pushState(null, '', `#${id}`);
+            }
+        }
+
+        function createIcon(name, classes = 'w-4 h-4 mr-1') {
+            return `<i data-lucide="${name}" class="${classes}"></i>`;
+        }
+
+        // --- RENDERING FUNCTIONS ---
+
+        function renderNav() {
+            const navLinksContainer = document.getElementById('nav-links');
+            const navHtml = NAV_ITEMS.map(item => `
+                <button
+                    id="nav-${item.id}"
+                    onclick="scrollToSection('${item.id}')"
+                    class="nav-item flex items-center space-x-1 p-2 rounded-xl transition-all duration-300 font-medium text-sm sm:text-base text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full"
+                >
+                    ${createIcon(item.icon, 'w-4 h-4 hidden sm:block')}
+                    <span>${item.label}</span>
+                </button>
+            `).join('');
+            navLinksContainer.innerHTML = navHtml;
+        }
+
+        function renderExperience() {
+            const container = document.getElementById('experience-list');
+            container.innerHTML = WORK_EXPERIENCE.map(job => `
+                <div class="mb-8 p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:translate-y-[-2px] content-card">
+                    <div class="flex justify-between items-start mb-3 flex-wrap">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900">${job.title}</h4>
+                            <p class="text-sm text-gray-600 font-medium mt-1">${job.company}</p>
+                        </div>
+                        <p class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0 bg-custom-yellow/20 px-3 py-1 rounded-full">${job.date}</p>
+                    </div>
+                    <ul class="list-none pl-0 mt-3 space-y-2">
+                        ${job.highlights.map(h => `
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i data-lucide="dot" class="text-custom-purple w-5 h-5 mr-2 flex-shrink-0 mt-1"></i>
+                                <span>${h}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `).join('');
+        }
+
+        function renderTechExpertise() {
+            const container = document.getElementById('tech-expertise-grid');
+            container.innerHTML = TECH_EXPERTISE.map(tech => `
+                <div class="p-4 bg-custom-teal/10 border border-custom-teal/20 rounded-xl shadow-md transition-shadow duration-200 hover:shadow-lg">
+                    <h4 class="font-semibold text-gray-800">${tech.name}</h4>
+                    <p class="text-xs text-gray-500 mt-1">${tech.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderEducation() {
+            const eduContainer = document.getElementById('education-section');
+            const certContainer = document.getElementById('certifications-section');
+
+            eduContainer.innerHTML = `
+                <h4 class="text-xl font-bold text-gray-800 border-b pb-2 border-gray-100 flex items-center">
+                    <i data-lucide="book-open" class="w-5 h-5 mr-2 text-custom-purple"></i> Education
+                </h4>
+                ${EDUCATION.map(edu => `
+                    <div class="p-3 border-l-4 border-custom-purple/70 bg-gray-50 rounded">
+                        <p class="font-semibold text-gray-800">${edu.title}</p>
+                        <p class="text-sm text-gray-600">${edu.company}</p>
+                        <p class="text-xs text-gray-500">${edu.date}</p>
+                    </div>
+                `).join('')}
+            `;
+
+            certContainer.innerHTML = `
+                <h4 class="text-xl font-bold text-gray-800 border-b pb-2 border-gray-100 flex items-center">
+                    <i data-lucide="zap" class="w-5 h-5 mr-2 text-custom-purple"></i> Certifications
+                </h4>
+                <ul class="list-none pl-0 mt-3 space-y-3">
+                    ${CERTIFICATIONS.map(cert => `
+                        <li class="flex items-center text-sm text-gray-700 p-2 bg-custom-purple/10 rounded-lg">
+                            <i data-lucide="check-circle" class="w-4 h-4 mr-2 flex-shrink-0 text-custom-purple"></i>
+                            <span>${cert}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+        }
+
+        function renderAdditionalExperience() {
+            const container = document.getElementById('additional-experience-grid');
+            container.innerHTML = ADDITIONAL_EXPERIENCE.map(job => `
+                <div class="p-4 bg-white border border-gray-200 rounded-xl shadow-md hover:border-custom-purple/70 transition-colors duration-200">
+                    <h4 class="font-semibold text-gray-800">${job.title}</h4>
+                    <p class="text-sm text-gray-600">${job.company}</p>
+                    <p class="text-xs text-gray-500 mt-1">${job.date}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderVisaTimeline() {
+            const container = document.getElementById('visa-timeline-container');
+            container.innerHTML += VISA_TIMELINE.map(item => `
+                <div class="mb-8 flex items-start relative">
+                    <!-- Timeline Dot/Icon -->
+                    <div class="absolute left-0 top-0 h-full flex items-start justify-center w-6 z-10">
+                        <div class="p-1 bg-white rounded-full shadow-md border-2 border-custom-teal">
+                            <i data-lucide="${item.icon}" class="w-4 h-4 text-custom-teal"></i>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="ml-8 p-4 bg-white border border-custom-teal/10 rounded-xl shadow-sm flex-1 hover:shadow-lg transition-shadow duration-200">
+                        <p class="text-sm font-bold text-gray-800 flex justify-between items-center">
+                            ${item.label}
+                            <span class="text-xs font-medium text-custom-teal bg-custom-teal/10 px-2 py-0.5 rounded-full">${item.date}</span>
+                        </p>
+                        <p class="text-gray-600 text-sm mt-1">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // --- SCROLL OBSERVATION LOGIC ---
+
+        function setupScrollSpy() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = [
+                document.getElementById('intro'),
+                document.getElementById('work'),
+                document.getElementById('visa')
+            ];
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-35% 0px -65% 0px', // Adjusted to activate when section is 35% down
+                threshold: 0,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.id;
+                    const navLink = document.getElementById(`nav-${id}`);
+
+                    if (navLink) {
+                        if (entry.isIntersecting) {
+                            // Deactivate all links
+                            navItems.forEach(item => {
+                                item.classList.remove('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105');
+                            });
+                            // Activate current link
+                            navLink.classList.add('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if (section) observer.observe(section);
+            });
+        }
+
+
+        // --- INITIALIZATION ---
+        window.onload = function() {
+            renderNav();
+            renderExperience();
+            renderTechExpertise();
+            renderEducation();
+            renderAdditionalExperience();
+            renderVisaTimeline();
+            
+            // Replaces data-lucide attributes with SVG icons
+            lucide.createIcons();
+
+            setupScrollSpy();
+        };
+    </script>
+
+</body>
+</html>
