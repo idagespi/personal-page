@@ -300,26 +300,25 @@
                 
                 <div class="p-6 md:p-10 rounded-3xl shadow-2xl border-t-8 border-custom-teal bg-white content-card">
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                    <!-- UPDATED: Grid layout removed for cleaner, condensed vertical flow -->
+                    <div class="space-y-4">
                         <!-- Status Card -->
-                        <div class="md:col-span-1 p-6 bg-custom-teal/10 border-2 border-custom-teal/50 rounded-xl shadow-inner flex flex-col items-center justify-center min-h-[150px]">
-                            <i data-lucide="check-circle" class="w-10 h-10 text-custom-teal mb-3"></i>
-                            <p class="text-xl font-bold text-custom-teal/90 text-center">
+                        <div class="p-4 bg-custom-teal/10 border-2 border-custom-teal/50 rounded-xl shadow-inner flex flex-col items-center justify-center">
+                            <i data-lucide="check-circle" class="w-8 h-8 text-custom-teal mb-2"></i>
+                            <p class="text-lg font-bold text-custom-teal/90 text-center">
                                 Full Working Rights
                             </p>
-                            <span class="text-sm text-custom-teal font-medium mt-1">
+                            <span class="text-sm text-custom-teal font-medium">
                                 No Sponsorship Transfer Required
                             </span>
                         </div>
                         
-                        <!-- Timeline Start Text (Removed) -->
-                    </div>
-
-                    <!-- Vertical Timeline -->
-                    <div id="visa-timeline-container" class="relative pt-4 pl-8">
-                        <!-- Vertical Line -->
-                        <div class="absolute top-0 bottom-0 left-3 w-1 bg-custom-teal/50 rounded-full"></div>
-                        <!-- Timeline Items rendered by JS -->
+                        <!-- Vertical Timeline -->
+                        <div id="visa-timeline-container" class="relative pt-4 pl-6">
+                            <!-- Vertical Line -->
+                            <div class="absolute top-0 bottom-0 left-3 w-1 bg-custom-teal/50 rounded-full"></div>
+                            <!-- Timeline Items rendered by JS -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -481,21 +480,21 @@
                 return;
             }
             container.innerHTML += VISA_TIMELINE.map(item => `
-                <div class="mb-8 flex items-start relative">
-                    <!-- Timeline Dot/Icon -->
+                <div class="mb-4 flex items-start relative">
+                    <!-- Timeline Dot/Icon (Fixed Alignment) -->
                     <div class="absolute left-0 top-0 h-full flex items-start justify-center w-6 z-10">
-                        <div class="p-1 bg-white rounded-full shadow-md border-2 border-custom-teal">
+                        <div class="p-1 bg-white rounded-full shadow-md border-2 border-custom-teal flex items-center justify-center">
                             <i data-lucide="${item.icon}" class="w-4 h-4 text-custom-teal"></i>
                         </div>
                     </div>
 
                     <!-- Content -->
-                    <div class="ml-8 p-4 bg-white border border-custom-teal/10 rounded-xl shadow-sm flex-1 hover:shadow-lg transition-shadow duration-200">
-                        <p class="text-sm font-bold text-gray-800 flex justify-between items-center">
+                    <div class="ml-8 p-0 flex-1">
+                        <p class="text-sm font-bold text-gray-800 flex justify-between items-center mb-0.5">
                             ${item.label}
                             <span class="text-xs font-medium text-custom-teal bg-custom-teal/10 px-2 py-0.5 rounded-full">${item.date}</span>
                         </p>
-                        <p class="text-gray-600 text-sm mt-1">${item.desc}</p>
+                        <p class="text-gray-600 text-sm">${item.desc}</p>
                     </div>
                 </div>
             `).join('');
