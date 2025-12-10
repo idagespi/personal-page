@@ -33,10 +33,17 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
-        /* Custom Photo Layering Effect (No longer used, but keeping definitions clean) */
+        /* Custom Photo Layering Effect */
         .photo-block {
-            /* Removed custom styles for cleaner, text-focused layout */
-            display: none; 
+            transform: rotate(-3deg);
+            transition: all 0.5s ease-in-out;
+            display: block; /* Ensure it is visible */
+        }
+        .photo-block:hover {
+            transform: rotate(0deg);
+        }
+        .photo-block img {
+            border-radius: 12px;
         }
         
         /* Utility classes from Lucide are dynamically applied later */
@@ -74,12 +81,12 @@
     <!-- 2. MAIN CONTENT AREA -->
     <main class="mx-auto">
 
-        <!-- 2.1. HERO SECTION (PHOTO REMOVED) -->
-        <section id="hero" class="p-6 md:p-16 pt-32 mb-20 max-w-5xl mx-auto text-center">
-            <div class="grid grid-cols-1 gap-16 items-center">
+        <!-- 2.1. HERO SECTION (PHOTO AREA RESTORED) -->
+        <section id="hero" class="p-6 md:p-16 pt-32 mb-20 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 
-                <!-- Left Side: Headline and Text (Now centered) -->
-                <div class="order-2 md:order-1 max-w-3xl mx-auto">
+                <!-- Left Side: Headline and Text -->
+                <div class="order-2 md:order-1 max-w-xl mx-auto md:mx-0 md:text-left text-center">
                     <h1 class="text-6xl md:text-8xl font-extrabold text-brand-dark mb-6 tracking-tight leading-none">
                         Hi, I’m Ida.
                         <span class="block text-custom-purple font-extrabold text-5xl md:text-6xl mt-4">
@@ -87,15 +94,12 @@
                         </span>
                     </h1>
                     
-                    <p class="text-xl md:text-2xl text-gray-700 mb-6 font-medium leading-relaxed">
-                        I focus on helping teams **build clear, user-centred digital products** and am passionate about shipping efficient outcomes.
-                    </p>
-                    
+                    <!-- Updated copy, focusing on the core value proposition -->
                     <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
-                        I bring <strong>7+ years of hands-on experience across SaaS, e-commerce, and operations.</strong> I strive to simplify complexity and optimize processes wherever I work.
+                        I focus on helping teams build clear, user-centred digital products and am passionate about shipping efficient outcomes. I strive to simplify complexity and optimize processes wherever I work.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center">
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
                         <!-- CTA 1: Download Resume -->
                         <a href="#" download="Ida_Espineda_Resume.pdf" class="flex items-center justify-center space-x-2 px-6 py-3 bg-custom-yellow text-brand-dark font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300">
                             <i data-lucide="download" class="w-5 h-5"></i>
@@ -110,27 +114,47 @@
                     </div>
                 </div>
 
-                <!-- Right Side: Photo with Modern Frame (REMOVED) -->
-                <div class="photo-block hidden"></div>
+                <!-- Right Side: Photo with Modern Frame (RESTORED & BIGGER) -->
+                <div class="w-full max-w-sm mx-auto md:max-w-none md:w-full h-auto flex justify-center order-1 md:order-2">
+                    <div class="relative w-72 h-72 md:w-96 md:h-96 group cursor-pointer photo-block">
+                        <!-- Layer 1: Colored background block (Offset and rotated) -->
+                        <div class="absolute inset-0 bg-custom-teal/40 rounded-3xl transform translate-x-4 translate-y-4 rotate-[-3deg] shadow-xl transition-all duration-500 group-hover:rotate-0 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+
+                        <!-- Layer 2: Photo itself (Layered on top) -->
+                        <div class="relative w-full h-full p-2 bg-white rounded-3xl shadow-2xl border-2 border-custom-teal/70 transform group-hover:scale-105 transition-transform duration-500">
+                            <img 
+                                src="Ida Photo.jpg" 
+                                alt="Ma. Ida G. Espineda Profile" 
+                                class="w-full h-full object-cover rounded-2xl"
+                                onerror="this.onerror=null; this.src='https://placehold.co/384x384/cccccc/333333?text=Ida+Photo';"
+                            >
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 2.2. WHAT I DO / SERVICES -->
+        <!-- 2.2. WHAT I DO / SERVICES (Summary inserted here) -->
         <section id="services" class="p-6 md:p-16 py-20 max-w-6xl mx-auto">
+            
+            <p class="text-2xl text-gray-700 mb-12 text-center max-w-4xl mx-auto font-medium">
+                I bring <strong>7+ years of hands-on experience across SaaS, e-commerce, and operations.</strong> I strive to simplify complexity and optimize processes wherever I work.
+            </p>
+            
             <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">What I Deliver</h2>
             <div id="services-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Services Cards rendered by JS -->
             </div>
         </section>
 
-        <!-- 2.3. CASE STUDIES -->
+        <!-- 2.3. RECENT PROJECTS -->
         <section id="cases" class="p-6 md:p-16 py-20 bg-white/70 max-w-full">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Case Studies: Delivering Scalable Outcomes</h2>
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Recent Projects: Delivering Scalable Outcomes</h2>
                 
                 <!-- Case Study 1: Outlook Calendar Integration (Project 1) -->
                 <div class="mb-16 p-8 md:p-12 bg-gray-50 rounded-xl shadow-xl border-l-8 border-custom-purple content-card">
-                    <h3 class="text-3xl font-bold text-custom-purple mb-4">Outlook Calendar Integration (Jul 2023 – Feb 2024)</h3>
+                    <h3 class="text-3xl font-bold text-custom-purple mb-4">Outlook Calendar Integration</h3>
                     <div class="flex flex-wrap text-sm text-gray-600 mb-6 space-x-4">
                         <span class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-1 text-gray-500"></i> Role: Product Manager</span>
                         <span class="flex items-center"><i data-lucide="layers" class="w-4 h-4 mr-1 text-gray-500"></i> Company: BarBooks Australia (Legal SaaS)</span>
@@ -143,14 +167,14 @@
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">Barristers and clerks manually updated schedules in both Outlook and BarBooks, causing **double bookings, missing appointments, and significant administrative burden**. This reduced productivity and increased the risk of costly errors due to data inconsistency.</p>
                             </div>
-                            <!-- What I Did -->
+                            <!-- What I Did (Updated PM Tasks) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4>
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Defined precise sync logic (one-way/two-way) and managed data mapping between platforms.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Led technical discovery, choosing **Microsoft Graph API (OAuth 2.0)** for secure, real-time synchronization.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Designed the conflict resolution logic and implemented a sync queuing system to handle API rate limits.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Coordinated phased rollout, user training, and UAT to identify and resolve edge cases (e.g., deleted bookings).</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Conducted user interviews to map scheduling workflows and pain points.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Defined functional requirements, sync logic, and acceptance criteria in PRDs.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Led technical discovery to select Microsoft Graph API (OAuth 2.0) for secure, real-time sync.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Coordinated engineering delivery, testing (UAT), and conflict resolution logic design.</li>
                                 </ul>
                             </div>
                         </div>
@@ -159,12 +183,12 @@
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-teal/10 rounded-lg">
-                                <p class="font-bold text-custom-teal">Goal Achieved: Seamless Sync</p>
-                                <p class="text-sm text-gray-700">Eliminated the need for duplicate entry, ensuring **real-time visibility** and **reduced scheduling conflicts** across the user base.</p>
+                                <p class="font-bold text-custom-teal">Reduced Manual Scheduling by ~60%</p>
+                                <p class="text-sm text-gray-700">Eliminated the need for duplicate entry, resulting in significant time savings and higher productivity.</p>
                             </div>
                             <div class="p-4 bg-custom-teal/10 rounded-lg">
-                                <p class="font-bold text-custom-teal">Improved Productivity</p>
-                                <p class="text-sm text-gray-700">Significantly reduced the administrative burden on clerks and barristers, allowing them to focus on legal work.</p>
+                                <p class="font-bold text-custom-teal">Increased Calendar Feature Usage</p>
+                                <p class="text-sm text-gray-700">Increased daily active usage of core calendar features due to seamless integration and real-time visibility.</p>
                             </div>
                         </div>
                     </div>
@@ -185,17 +209,15 @@
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">The legacy Clerk Diary View was inefficient, using excessive screen space and preventing clerks from viewing necessary scheduling and user information at a glance. This poor UX impacted usability and required constant scrolling/switching.</p>
-                                <p class="text-sm text-gray-500 mt-2">HubSpot linked tickets included concerns over layout, filter functionality, and visibility (e.g., #3 email re TALAW diary, Diary suggestions!).</p>
                             </div>
-                            <!-- What I Did -->
+                            <!-- What I Did (Updated PM Tasks) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did (UI/UX & Hierarchy)</h4>
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Led UI/UX redesign to maximize screen space (full row height) and consolidate user filters into a compact, space-saving UI.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Unified the Diaries table to list all users (Barristers + Non-Barristers) in one view, removing cluttering sub-tabs.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Implemented advanced, compact filter components with search bars, clear CTAs, and optimized selection display rules (number vs. name).</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Defined new sorting behaviors to ensure Barristers maintain priority while still allowing detailed filtering (e.g., Sort by Last Name).</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Redesigned the collateral elements (Booking Button, Toolbar, Settings, Export) for better alignment and modern aesthetics.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Conducted user interviews and design sessions to map the new unified view workflow.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Defined functional requirements for new compact filter components (date range, user groups).</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Ran discovery sessions on filter rules and defined new sorting behaviors (Barrister priority).</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Coordinated engineering delivery for UI implementation and cross-browser testing.</li>
                                 </ul>
                             </div>
                         </div>
@@ -204,12 +226,12 @@
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-purple/10 rounded-lg">
-                                <p class="font-bold text-custom-purple">Reduced Clicks & Friction</p>
-                                <p class="text-sm text-gray-700">Diary usage flow for clerks was optimized, **reducing the number of clicks required by half** for common scheduling tasks.</p>
+                                <p class="font-bold text-custom-purple">Positive Feedback from Clerks</p>
+                                <p class="text-sm text-gray-700">Received immediate and positive feedback from clerks, validating the enhanced usability and efficiency of the unified diary view.</p>
                             </div>
                             <div class="p-4 bg-custom-purple/10 rounded-lg">
-                                <p class="font-bold text-custom-purple">Positive User Feedback</p>
-                                <p class="text-sm text-gray-700">Received general positive customer feedback confirming enhanced usability and efficiency across the unified view.</p>
+                                <p class="font-bold text-custom-purple">Reduced User Clicks by Half</p>
+                                <p class="text-sm text-gray-700">Diary usage flow was optimized, reducing the number of clicks required by half for common scheduling and filtering tasks.</p>
                             </div>
                         </div>
                     </div>
@@ -255,7 +277,7 @@
             </div>
 
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                I love solving messy product problems and turning them into simple, delightful user experiences. I thrive in fast-moving teams where I can connect the dots between **user needs, engineering reality, and stakeholder vision**.
+                I love solving messy product problems and turning them into simple, delightful user experiences. I thrive in fast-moving teams where I can connect the dots between user needs, engineering reality, and stakeholder vision.
             </p>
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold">
                 Outside work, I enjoy trying new restaurants and watching series, alongside learning about AI tools and building small apps.
@@ -318,11 +340,7 @@
                     <span>Connect on LinkedIn</span>
                 </a>
 
-                <!-- Calendly (Placeholder) -->
-                <a href="#" target="_blank" class="flex items-center justify-center space-x-2 px-6 py-3 bg-gray-200 text-brand-dark font-semibold rounded-lg shadow-xl hover:bg-gray-300 transition-all duration-300">
-                    <i data-lucide="calendar-check" class="w-5 h-5"></i>
-                    <span>Book a Quick Chat</span>
-                </a>
+                <!-- Removed Calendly Button -->
             </div>
         </section>
 
@@ -352,7 +370,7 @@
         const NAV_ITEMS = [
             { id: 'hero', label: 'Home', icon: 'home' },
             { id: 'services', label: 'Services', icon: 'zap' },
-            { id: 'cases', label: 'Case Studies', icon: 'book-open' },
+            { id: 'cases', label: 'Recent Projects', icon: 'book-open' }, // Updated nav link label
             { id: 'experience', label: 'Experience', icon: 'briefcase' },
             { id: 'contact', label: 'Contact', icon: 'mail' },
         ];
