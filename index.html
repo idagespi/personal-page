@@ -421,7 +421,17 @@
         ];
 
         const FULL_EXPERIENCE_DATA = [
-            { title: 'Product Manager', company: 'BarBooks Australia (Legal SaaS)', date: 'Jul 2022 – Present', icon: 'briefcase', color: 'custom-purple', achievements: ['Owned end-to-end product lifecycle for legal fintech SaaS serving **2,000+ users** across 7 chambers.', 'Lead product discovery, defining BRDs/PRDs via Jira & Confluence.'] },
+            { 
+                title: 'Product Manager', 
+                company: 'BarBooks Australia (Legal SaaS)', 
+                date: 'Jul 2022 – Present', 
+                icon: 'briefcase', 
+                color: 'custom-purple', 
+                achievements: [
+                    'Owned end-to-end product lifecycle for legal fintech SaaS serving Barristers and Clerks across chambers from AU, UK and SG market.', 
+                    'Lead product discovery, defining BRDs/PRDs via Jira & Confluence.'
+                ] 
+            },
             { title: 'Business Product Lead – Shopee Ads', company: 'Shopee Philippines (eCommerce Platform)', date: 'Nov 2020 – Jul 2022', icon: 'briefcase', color: 'custom-purple', achievements: ['Spearheaded go-to-market programs that doubled ad revenue YOY.', 'Managed paid ads team and optimized operations using product and user data.'] },
             { title: 'Business Development Officer', company: 'PAL Express (Airline)', date: 'Apr 2018 – May 2020', icon: 'briefcase', color: 'custom-purple', 
                 achievements: [
@@ -441,7 +451,7 @@
                 const offset = 70; 
                 const y = element.getBoundingClientRect().top + window.scrollY - offset; 
                 window.scrollTo({ top: y, behavior: 'smooth' });
-                window.history.hash = `#${id}`;
+                window.history.pushState(null, '', `#${id}`);
             }
         }
 
