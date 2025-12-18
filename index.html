@@ -87,6 +87,7 @@
         <section id="hero" class="p-6 md:p-16 pt-32 mb-20 max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 
+                <!-- Left Side: Headline and Text -->
                 <div class="order-2 md:order-1 max-w-xl mx-auto md:mx-0 md:text-left text-center">
                     <h1 class="text-6xl md:text-8xl font-extrabold text-brand-dark mb-6 tracking-tight leading-none">
                         Hi, I’m Ida.
@@ -95,16 +96,19 @@
                         </span>
                     </h1>
                     
+                    <!-- Core mission statement -->
                     <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
                         I focus on helping teams build clear, user-centred digital products and am passionate about shipping efficient outcomes.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                        <!-- CTA 1: Download Resume (Fixed path) -->
                         <a href="Ida_Espineda_Resume.pdf" download="Ida_Espineda_Resume.pdf" class="flex items-center justify-center space-x-2 px-6 py-3 bg-custom-yellow text-brand-dark font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300">
                             <i data-lucide="download" class="w-5 h-5"></i>
                             <span>Download Resume</span>
                         </a>
                         
+                        <!-- CTA 2: Contact Me -->
                         <button onclick="scrollToSection('contact')" class="flex items-center justify-center space-x-2 px-6 py-3 bg-brand-dark text-white font-semibold rounded-lg shadow-md hover:bg-custom-purple transition-all duration-300">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                             <span>Contact Me</span>
@@ -112,9 +116,13 @@
                     </div>
                 </div>
 
+                <!-- Right Side: Photo with Modern Frame -->
                 <div class="w-full max-w-sm mx-auto md:max-w-none md:w-full h-auto flex justify-center order-1 md:order-2">
                     <div class="relative w-72 h-72 md:w-96 md:h-96 group cursor-pointer photo-block">
+                        <!-- Layer 1: Colored background block -->
                         <div class="absolute inset-0 bg-custom-teal/80 rounded-2xl transform translate-x-4 translate-y-4 rotate-[-3deg] shadow-xl transition-all duration-500 group-hover:rotate-0 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+
+                        <!-- Layer 2: Photo itself -->
                         <div class="relative w-full h-full bg-white rounded-2xl shadow-2xl border-4 border-white transform transition-transform duration-500 overflow-hidden">
                             <img 
                                 src="Ida Photo.jpg" 
@@ -128,12 +136,17 @@
             </div>
         </section>
 
-        <!-- 2.2. WHAT I DO / SERVICES -->
+        <!-- 2.2. WHAT I DO / SERVICES (Summary Updated) -->
         <section id="services" class="p-6 md:p-16 py-20 max-w-6xl mx-auto">
+            
+            <!-- 1. HEADER -->
             <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">What I Deliver</h2>
-            <p class="text-2xl text-gray-700 mb-12 text-center max-w-4xl mx-auto font-medium">
-                I bring <strong>7+ years of hands-on experience across SaaS, e-commerce, and operations.</strong> I strive to simplify complexity and optimize processes wherever I work.
+
+            <!-- 2. SUMMARY (Updated text) -->
+            <p class="text-xl md:text-2xl text-gray-700 mb-12 text-center max-w-4xl mx-auto font-medium">
+                I bring <strong>7+ years of hands-on experience</strong> across SaaS, e-commerce, and operations. I’ve worked in both startup and large marketplace environments, partnering closely with engineering, design, data, and business teams.
             </p>
+            
             <div id="services-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Services Cards rendered by JS -->
             </div>
@@ -154,10 +167,12 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2 space-y-6">
+                            <!-- Problem -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">Barristers and clerks manually updated schedules in both Outlook and BarBooks, causing double bookings, missing appointments, and significant administrative burden. This reduced productivity and increased the risk of costly errors due to data inconsistency.</p>
                             </div>
+                            <!-- What I Did -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4>
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
@@ -170,6 +185,7 @@
                             </div>
                         </div>
                         
+                        <!-- Outcomes/Metrics -->
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-teal/10 rounded-lg">
@@ -194,14 +210,16 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2 space-y-6">
+                            <!-- Problem -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">The legacy Clerk Diary View was inefficient, using excessive screen space and preventing clerks from viewing necessary scheduling and user information at a glance. This poor UX impacted usability and required constant scrolling/switching.</p>
                             </div>
+                            <!-- What I Did (Streamlined) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4> 
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Reviewed click-stream data and user heatmaps to identify bottlenecks in the multi-tab navigation process and inform the layout of the unified view.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Reviewed click-stream data and user heatmaps to identify bottlenecks in the multi-tab navigation and guide the design of the unified view.</li>
                                     <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Conducted user interviews and design sessions with clerks to map workflow needs.</li>
                                     <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Defined requirements for new compact filters and unified diary view.</li>
                                     <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Led discovery sessions on sorting rules and coordinated engineering delivery through UAT.</li>
@@ -210,6 +228,7 @@
                             </div>
                         </div>
                         
+                        <!-- Outcomes/Metrics -->
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-purple/10 rounded-lg">
@@ -252,7 +271,7 @@
             <h2 class="text-4xl font-extrabold text-brand-dark mb-10">More about me</h2>
             
             <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 content-card">
-                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-12 font-medium">
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-12 font-medium text-center">
                     Outside of work, you can find me exploring Sydney, trying new cafes and enjoying new comedy and dystopian shows, alongside discovering new AI tools and technical systems.
                 </p>
 
@@ -283,7 +302,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-900">Yoga</h4>
-                            <p class="text-gray-600 text-sm">Focusing on balance and a bit of mental clarity.</p>
+                            <p class="text-gray-600 text-sm">Focusing on balance and mental clarity.</p>
                         </div>
                     </div>
 
@@ -348,15 +367,16 @@
 
         <!-- 2.8. CONTACT SECTION -->
         <section id="contact" class="p-6 md:p-16 py-20 max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-extrabold text-brand-dark mb-4">Let's Connect and Build Together.</h2>
-            <p class="text-xl text-gray-700 mb-10">I’m currently open to new product challenges. Reach out for a chat!</p>
-
+            <h2 class="text-5xl font-extrabold text-brand-dark mb-10">Let's Connect and Build Together.</h2>
+            
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <!-- Email -->
                 <a href="mailto:igespineda@gmail.com" class="flex items-center justify-center space-x-2 px-6 py-3 bg-brand-dark text-white font-semibold rounded-lg shadow-xl hover:bg-custom-purple transition-all duration-300">
                     <i data-lucide="mail" class="w-5 h-5"></i>
                     <span>Email Me</span>
                 </a>
                 
+                <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/ida-espineda-331a6295/" target="_blank" class="flex items-center justify-center space-x-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-xl hover:bg-blue-700 transition-all duration-300">
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                     <span>Connect on LinkedIn</span>
@@ -378,6 +398,7 @@
 
     <!-- 4. JAVASCRIPT LOGIC -->
     <script>
+        // --- DATA ---
         const NAV_ITEMS = [
             { id: 'hero', label: 'Home', icon: 'home' },
             { id: 'services', label: 'Services', icon: 'zap' },
@@ -425,8 +446,8 @@
             }
         }
 
-        function createIcon(name, classes = 'w-4 h-4 mr-1') {
-            return `<i data-lucide="${name}" class="${classes}"></i>`;
+        function createIcon(itemIcon, classes = 'w-4 h-4 mr-1') {
+            return `<i data-lucide="${itemIcon}" class="${classes}"></i>`;
         }
 
         function renderNav() {
