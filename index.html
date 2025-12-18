@@ -37,17 +37,15 @@
         .photo-block {
             transform: rotate(-3deg);
             transition: all 0.5s ease-in-out;
-            display: block; /* Ensure it is visible */
+            display: block;
         }
         .photo-block:hover {
             transform: rotate(0deg);
         }
         .photo-block img {
-            /* Keep the image sharp and contained within the frame */
             border-radius: 12px;
-            /* Ensures image maintains ratio while filling its clipped container */
             object-fit: cover; 
-            aspect-ratio: 1/1; /* Enforce square aspect ratio for the frame */
+            aspect-ratio: 1/1;
         }
     </style>
     <!-- Tailwind Configuration for custom colors -->
@@ -59,7 +57,7 @@
                         'custom-purple': '#8B5CF6',
                         'custom-teal': '#2DD4BF',
                         'custom-yellow': '#FBBF24',
-                        'brand-dark': '#1F2937', /* Dark gray/black for main text */
+                        'brand-dark': '#1F2937', 
                     },
                 },
             },
@@ -68,7 +66,7 @@
 </head>
 <body class="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 antialiased">
 
-    <!-- 1. NAVIGATION BAR (Sticky & Dynamic) -->
+    <!-- 1. NAVIGATION BAR -->
     <nav id="nav-bar" class="p-4 shadow-lg sticky top-0 z-20 border-b border-gray-100">
         <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap">
             <a href="#hero" class="text-xl font-bold text-brand-dark tracking-wide hover:text-custom-purple transition-colors" onclick="scrollToSection('hero', event)">
@@ -87,7 +85,6 @@
         <section id="hero" class="p-6 md:p-16 pt-32 mb-20 max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 
-                <!-- Left Side: Headline and Text -->
                 <div class="order-2 md:order-1 max-w-xl mx-auto md:mx-0 md:text-left text-center">
                     <h1 class="text-6xl md:text-8xl font-extrabold text-brand-dark mb-6 tracking-tight leading-none">
                         Hi, I’m Ida.
@@ -96,19 +93,16 @@
                         </span>
                     </h1>
                     
-                    <!-- Core mission statement -->
                     <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
                         I focus on helping teams build clear, user-centred digital products and am passionate about shipping efficient outcomes.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-                        <!-- CTA 1: Download Resume (Fixed path) -->
                         <a href="Ida_Espineda_Resume.pdf" download="Ida_Espineda_Resume.pdf" class="flex items-center justify-center space-x-2 px-6 py-3 bg-custom-yellow text-brand-dark font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300">
                             <i data-lucide="download" class="w-5 h-5"></i>
                             <span>Download Resume</span>
                         </a>
                         
-                        <!-- CTA 2: Contact Me -->
                         <button onclick="scrollToSection('contact')" class="flex items-center justify-center space-x-2 px-6 py-3 bg-brand-dark text-white font-semibold rounded-lg shadow-md hover:bg-custom-purple transition-all duration-300">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                             <span>Contact Me</span>
@@ -116,13 +110,9 @@
                     </div>
                 </div>
 
-                <!-- Right Side: Photo with Modern Frame -->
                 <div class="w-full max-w-sm mx-auto md:max-w-none md:w-full h-auto flex justify-center order-1 md:order-2">
                     <div class="relative w-72 h-72 md:w-96 md:h-96 group cursor-pointer photo-block">
-                        <!-- Layer 1: Colored background block -->
                         <div class="absolute inset-0 bg-custom-teal/80 rounded-2xl transform translate-x-4 translate-y-4 rotate-[-3deg] shadow-xl transition-all duration-500 group-hover:rotate-0 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-
-                        <!-- Layer 2: Photo itself -->
                         <div class="relative w-full h-full bg-white rounded-2xl shadow-2xl border-4 border-white transform transition-transform duration-500 overflow-hidden">
                             <img 
                                 src="Ida Photo.jpg" 
@@ -136,17 +126,12 @@
             </div>
         </section>
 
-        <!-- 2.2. WHAT I DO / SERVICES (Summary Updated) -->
+        <!-- 2.2. WHAT I DO / SERVICES -->
         <section id="services" class="p-6 md:p-16 py-20 max-w-6xl mx-auto">
-            
-            <!-- 1. HEADER -->
             <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">What I Deliver</h2>
-
-            <!-- 2. SUMMARY (Updated text) -->
             <p class="text-xl md:text-2xl text-gray-700 mb-12 text-center max-w-4xl mx-auto font-medium">
                 I bring <strong>7+ years of hands-on experience</strong> across SaaS, e-commerce, and operations. I’ve worked in both startup and large marketplace environments, partnering closely with engineering, design, data, and business teams.
             </p>
-            
             <div id="services-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Services Cards rendered by JS -->
             </div>
@@ -167,12 +152,10 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2 space-y-6">
-                            <!-- Problem -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">Barristers and clerks manually updated schedules in both Outlook and BarBooks, causing double bookings, missing appointments, and significant administrative burden. This reduced productivity and increased the risk of costly errors due to data inconsistency.</p>
                             </div>
-                            <!-- What I Did -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4>
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
@@ -185,7 +168,6 @@
                             </div>
                         </div>
                         
-                        <!-- Outcomes/Metrics -->
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-teal/10 rounded-lg">
@@ -200,7 +182,7 @@
                     </div>
                 </div>
 
-                <!-- Case Study 2: Diary Redesign UI Revamp for Clerk View -->
+                <!-- Case Study 2: Diary Redesign -->
                 <div class="p-8 md:p-12 bg-gray-50 rounded-xl shadow-xl border-l-8 border-custom-teal content-card">
                     <h3 class="text-3xl font-bold text-custom-teal mb-4">Diary Redesign: UI Revamp for Clerk View</h3>
                     <div class="flex flex-wrap text-sm text-gray-600 mb-6 space-x-4">
@@ -210,12 +192,10 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2 space-y-6">
-                            <!-- Problem -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">The legacy Clerk Diary View was inefficient, using excessive screen space and preventing clerks from viewing necessary scheduling and user information at a glance. This poor UX impacted usability and required constant scrolling/switching.</p>
                             </div>
-                            <!-- What I Did (Streamlined) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4> 
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
@@ -228,7 +208,6 @@
                             </div>
                         </div>
                         
-                        <!-- Outcomes/Metrics -->
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-purple/10 rounded-lg">
@@ -256,7 +235,17 @@
             </div>
         </section>
 
-        <!-- 2.5. SKILLS SECTION -->
+        <!-- 2.5. CERTIFICATIONS SECTION (New) -->
+        <section id="certs" class="p-6 md:p-16 py-20 bg-gray-50 max-w-full">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Certifications & Assessments</h2>
+                <div id="certs-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Certs rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.6. SKILLS SECTION -->
         <section id="skills" class="p-6 md:p-16 py-20 bg-custom-purple/5 max-w-full">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">My Core Capabilities</h2>
@@ -266,7 +255,7 @@
             </div>
         </section>
 
-        <!-- 2.6. MORE ABOUT ME -->
+        <!-- 2.7. MORE ABOUT ME -->
         <section id="about" class="p-6 md:p-16 py-20 max-w-5xl mx-auto text-center">
             <h2 class="text-4xl font-extrabold text-brand-dark mb-10">More about me</h2>
             
@@ -339,7 +328,7 @@
             </div>
         </section>
         
-        <!-- 2.7. WORK RIGHTS SECTION -->
+        <!-- 2.8. WORK RIGHTS SECTION -->
         <section id="visa" class="p-6 md:p-16 py-20 bg-custom-teal/5 max-w-full">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-extrabold text-brand-dark mb-8 text-center">Australian Work Authorization</h2>
@@ -365,18 +354,16 @@
             </div>
         </section>
 
-        <!-- 2.8. CONTACT SECTION -->
+        <!-- 2.9. CONTACT SECTION -->
         <section id="contact" class="p-6 md:p-16 py-20 max-w-4xl mx-auto text-center">
             <h2 class="text-5xl font-extrabold text-brand-dark mb-10">Let's Connect and Build Together.</h2>
             
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <!-- Email -->
                 <a href="mailto:igespineda@gmail.com" class="flex items-center justify-center space-x-2 px-6 py-3 bg-brand-dark text-white font-semibold rounded-lg shadow-xl hover:bg-custom-purple transition-all duration-300">
                     <i data-lucide="mail" class="w-5 h-5"></i>
                     <span>Email Me</span>
                 </a>
                 
-                <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/ida-espineda-331a6295/" target="_blank" class="flex items-center justify-center space-x-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-xl hover:bg-blue-700 transition-all duration-300">
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                     <span>Connect on LinkedIn</span>
@@ -427,14 +414,26 @@
             { icon: 'check-circle', label: 'Employment Ensured', date: 'Outcome', desc: 'Continuous employment eligibility confirmed for long-term roles.' },
         ];
         
+        const CERTS_DATA = [
+            { title: 'AI for Product Management', org: 'Pendo.io', date: 'Mar 2025', link: 'https://www.credly.com/', linkLabel: 'View Credly Badge', icon: 'cpu' },
+            { title: 'SQL: From Zero to Hero', org: 'Udemy', date: 'Mar 2025', link: 'https://www.udemy.com/certificate/', linkLabel: 'View Certificate', icon: 'database' },
+            { title: 'ACS Skills Assessment', org: 'Australian Computer Society', date: 'ANZSCO codes', desc: '135112, 135199, 261111', icon: 'file-check' },
+        ];
+
         const FULL_EXPERIENCE_DATA = [
-            { title: 'Product Manager', company: 'BarBooks Australia (Legal SaaS)', date: 'Jul 2022 – Present', icon: 'briefcase', color: 'custom-purple', achievements: ['Owned end-to-end product lifecycle for legal fintech SaaS serving 2,000+ users.', 'Lead product discovery, defining BRDs/PRDs via Jira & Confluence.'] },
+            { title: 'Product Manager', company: 'BarBooks Australia (Legal SaaS)', date: 'Jul 2022 – Present', icon: 'briefcase', color: 'custom-purple', achievements: ['Owned end-to-end product lifecycle for legal fintech SaaS serving **2,000+ users** across 7 chambers.', 'Lead product discovery, defining BRDs/PRDs via Jira & Confluence.'] },
             { title: 'Business Product Lead – Shopee Ads', company: 'Shopee Philippines (eCommerce Platform)', date: 'Nov 2020 – Jul 2022', icon: 'briefcase', color: 'custom-purple', achievements: ['Spearheaded go-to-market programs that doubled ad revenue YOY.', 'Managed paid ads team and optimized operations using product and user data.'] },
-            { title: 'Business Development Officer', company: 'PAL Express (Airline)', date: 'Apr 2018 – May 2020', icon: 'briefcase', color: 'custom-purple', achievements: ['Focused on strategy and development for key airline projects.'] },
+            { title: 'Business Development Officer', company: 'PAL Express (Airline)', date: 'Apr 2018 – May 2020', icon: 'briefcase', color: 'custom-purple', 
+                achievements: [
+                    'Focused on strategy and development for key airline projects.',
+                    'Supported concept-to-launch execution for the company\'s startup business - Guide to the Philippines, an online travel platform.'
+                ] 
+            },
             { title: 'Project Development Specialist', company: 'Filinvest Land Inc.', date: 'Aug 2015 – Feb 2018', icon: 'briefcase', color: 'custom-purple', achievements: ['Managed and coordinated project phases for major real estate developments.'] },
             { title: 'Bachelor of Science, Economics', company: 'University of the Philippines, Diliman', date: '2011–2015', icon: 'graduation-cap', color: 'custom-teal', achievements: ['Certified in AI for Product Management (Pendo.io) & SQL (Udemy).'] },
         ];
 
+        // --- UTILITY FUNCTIONS ---
         function scrollToSection(id, event) {
             if (event) event.preventDefault();
             const element = document.getElementById(id);
@@ -450,6 +449,7 @@
             return `<i data-lucide="${itemIcon}" class="${classes}"></i>`;
         }
 
+        // --- RENDERING FUNCTIONS ---
         function renderNav() {
             const navLinksContainer = document.getElementById('nav-links');
             navLinksContainer.innerHTML = NAV_ITEMS.map(item => `
@@ -467,6 +467,28 @@
                     <div class="w-10 h-10 bg-custom-purple/10 rounded-full flex items-center justify-center mb-4"><i data-lucide="${service.icon}" class="w-6 h-6 text-custom-purple"></i></div>
                     <h3 class="text-xl font-bold text-brand-dark mb-2">${service.title}</h3>
                     <p class="text-gray-600 text-sm">${service.description}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderCerts() {
+            const container = document.getElementById('certs-grid');
+            container.innerHTML = CERTS_DATA.map(cert => `
+                <div class="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="p-2 bg-custom-purple/10 rounded-lg text-custom-purple mr-3">
+                            <i data-lucide="${cert.icon}" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900">${cert.title}</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-1">${cert.org}</p>
+                    <p class="text-xs text-gray-400 mb-4">${cert.date}</p>
+                    ${cert.link ? 
+                        `<a href="${cert.link}" target="_blank" class="text-sm font-semibold text-custom-purple hover:underline flex items-center">
+                            ${cert.linkLabel} <i data-lucide="external-link" class="w-3 h-3 ml-1"></i>
+                        </a>` : 
+                        `<p class="text-sm font-bold text-brand-dark">${cert.desc}</p>`
+                    }
                 </div>
             `).join('');
         }
@@ -509,7 +531,13 @@
                     </span>
                     <h3 class="text-2xl font-bold text-brand-dark">${item.title}</h3>
                     <p class="text-lg text-gray-700 mb-2">${item.company} | ${item.date}</p>
-                    <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">${item.achievements.map(a => `<li>${a}</li>`).join('')}</ul>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+                        ${item.achievements.map(a => {
+                            // Basic markdown-like bold parsing
+                            const text = a.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                            return `<li>${text}</li>`;
+                        }).join('')}
+                    </ul>
                 </div>
             `).join('');
         }
@@ -550,6 +578,7 @@
             renderSkills();
             renderTimelineExperience();
             renderVisaTimeline();
+            renderCerts();
             lucide.createIcons();
             setupScrollSpy();
         };
