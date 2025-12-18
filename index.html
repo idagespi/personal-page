@@ -33,19 +33,30 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
-        /* Custom Photo Layering Effect */
-        .photo-block {
-            transform: rotate(-3deg);
-            transition: all 0.5s ease-in-out;
+        /* Modern Photo Portion Effect - Spotlight studio style for cutouts */
+        .photo-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Ground the cutout image at the bottom */
+            height: 100%;
+        }
+        .photo-studio-bg {
+            position: absolute;
+            bottom: 0;
+            width: 85%;
+            height: 85%;
+            background: #e5e7eb; /* Soft neutral gray studio background */
+            border-radius: 4rem; /* Rounded studio backdrop shape */
+            z-index: 0;
+        }
+        .hero-photo-cutout {
+            position: relative;
+            z-index: 10;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+            max-height: 550px;
+            width: auto;
             display: block;
-        }
-        .photo-block:hover {
-            transform: rotate(0deg);
-        }
-        .photo-block img {
-            border-radius: 12px;
-            object-fit: cover; 
-            aspect-ratio: 1/1;
         }
     </style>
     <!-- Tailwind Configuration for custom colors -->
