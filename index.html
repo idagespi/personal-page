@@ -49,8 +49,6 @@
             object-fit: cover; 
             aspect-ratio: 1/1; /* Enforce square aspect ratio for the frame */
         }
-        
-        /* Utility classes from Lucide are dynamically applied later */
     </style>
     <!-- Tailwind Configuration for custom colors -->
     <script>
@@ -85,11 +83,10 @@
     <!-- 2. MAIN CONTENT AREA -->
     <main class="mx-auto">
 
-        <!-- 2.1. HERO SECTION (PHOTO AREA RESTORED) -->
+        <!-- 2.1. HERO SECTION -->
         <section id="hero" class="p-6 md:p-16 pt-32 mb-20 max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 
-                <!-- Left Side: Headline and Text -->
                 <div class="order-2 md:order-1 max-w-xl mx-auto md:mx-0 md:text-left text-center">
                     <h1 class="text-6xl md:text-8xl font-extrabold text-brand-dark mb-6 tracking-tight leading-none">
                         Hi, I’m Ida.
@@ -98,19 +95,16 @@
                         </span>
                     </h1>
                     
-                    <!-- Core mission statement -->
                     <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
                         I focus on helping teams build clear, user-centred digital products and am passionate about shipping efficient outcomes.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-                        <!-- CTA 1: Download Resume -->
-                        <a href="#" download="Ida_Espineda_Resume.pdf" class="flex items-center justify-center space-x-2 px-6 py-3 bg-custom-yellow text-brand-dark font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300">
+                        <a href="Ida_Espineda_Resume.pdf" download="Ida_Espineda_Resume.pdf" class="flex items-center justify-center space-x-2 px-6 py-3 bg-custom-yellow text-brand-dark font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition-all duration-300">
                             <i data-lucide="download" class="w-5 h-5"></i>
                             <span>Download Resume</span>
                         </a>
                         
-                        <!-- CTA 2: Contact Me -->
                         <button onclick="scrollToSection('contact')" class="flex items-center justify-center space-x-2 px-6 py-3 bg-brand-dark text-white font-semibold rounded-lg shadow-md hover:bg-custom-purple transition-all duration-300">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                             <span>Contact Me</span>
@@ -118,13 +112,9 @@
                     </div>
                 </div>
 
-                <!-- Right Side: Photo with Modern Frame (RESTORED & BIGGER) -->
                 <div class="w-full max-w-sm mx-auto md:max-w-none md:w-full h-auto flex justify-center order-1 md:order-2">
                     <div class="relative w-72 h-72 md:w-96 md:h-96 group cursor-pointer photo-block">
-                        <!-- Layer 1: Colored background block (Offset and rotated) -->
                         <div class="absolute inset-0 bg-custom-teal/80 rounded-2xl transform translate-x-4 translate-y-4 rotate-[-3deg] shadow-xl transition-all duration-500 group-hover:rotate-0 group-hover:translate-x-0 group-hover:translate-y-0"></div>
-
-                        <!-- Layer 2: Photo itself (Simplified inner container) -->
                         <div class="relative w-full h-full bg-white rounded-2xl shadow-2xl border-4 border-white transform transition-transform duration-500 overflow-hidden">
                             <img 
                                 src="Ida Photo.jpg" 
@@ -138,30 +128,23 @@
             </div>
         </section>
 
-        <!-- 2.2. WHAT I DO / SERVICES (Order of elements changed, bullet list removed) -->
+        <!-- 2.2. WHAT I DO / SERVICES -->
         <section id="services" class="p-6 md:p-16 py-20 max-w-6xl mx-auto">
-            
-            <!-- 1. HEADER (Moved to the top) -->
             <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">What I Deliver</h2>
-
-            <!-- 2. SUMMARY (Moved below the header) -->
             <p class="text-2xl text-gray-700 mb-12 text-center max-w-4xl mx-auto font-medium">
                 I bring <strong>7+ years of hands-on experience across SaaS, e-commerce, and operations.</strong> I strive to simplify complexity and optimize processes wherever I work.
             </p>
-            
-            <!-- REMOVED BULLETED LIST -->
-            
             <div id="services-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Services Cards rendered by JS -->
             </div>
         </section>
 
-        <!-- 2.3. RECENT PROJECTS (Title changed to Selected Projects) -->
+        <!-- 2.3. FEATURED PROJECTS -->
         <section id="cases" class="p-6 md:p-16 py-20 bg-white/70 max-w-full">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Selected Projects</h2>
+                <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Featured Projects</h2>
                 
-                <!-- Case Study 1: Outlook Calendar Integration (Project 1) -->
+                <!-- Case Study 1: Outlook Calendar Integration -->
                 <div class="mb-16 p-8 md:p-12 bg-gray-50 rounded-xl shadow-xl border-l-8 border-custom-purple content-card">
                     <h3 class="text-3xl font-bold text-custom-purple mb-4">Outlook Calendar Integration</h3>
                     <div class="flex flex-wrap text-sm text-gray-600 mb-6 space-x-4">
@@ -171,24 +154,22 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2 space-y-6">
-                            <!-- Problem (Asterisks removed from description) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">Barristers and clerks manually updated schedules in both Outlook and BarBooks, causing double bookings, missing appointments, and significant administrative burden. This reduced productivity and increased the risk of costly errors due to data inconsistency.</p>
                             </div>
-                            <!-- What I Did (Reordered for impact) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4>
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Conducted user interviews to map scheduling workflows and pain points.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Defined functional requirements, sync logic, and acceptance criteria in PRDs.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Led technical discovery to select Microsoft Graph API (OAuth 2.0) for secure, real-time sync.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal"></i> Coordinated engineering delivery, testing (UAT), and conflict resolution logic design.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal flex-shrink-0"></i> Analyzed historical scheduling conflict data and user error logs to quantify the impact of manual entry errors and prioritize sync logic rules.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal flex-shrink-0"></i> Conducted user interviews to map scheduling workflows and pain points.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal flex-shrink-0"></i> Defined functional requirements, sync logic, and acceptance criteria in PRDs.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal flex-shrink-0"></i> Led technical discovery to select Microsoft Graph API (OAuth 2.0) for secure, real-time sync.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-teal flex-shrink-0"></i> Coordinated engineering delivery, testing (UAT), and conflict resolution logic design.</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <!-- Outcomes/Metrics (UPDATED METRICS FORMAT) -->
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-teal/10 rounded-lg">
@@ -213,24 +194,22 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2 space-y-6">
-                            <!-- Problem -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">The Problem</h4>
                                 <p class="text-gray-700">The legacy Clerk Diary View was inefficient, using excessive screen space and preventing clerks from viewing necessary scheduling and user information at a glance. This poor UX impacted usability and required constant scrolling/switching.</p>
                             </div>
-                            <!-- What I Did (Streamlined) -->
                             <div>
                                 <h4 class="text-xl font-bold text-brand-dark mb-2">What I Did</h4> 
                                 <ul class="list-none pl-0 space-y-1 text-gray-700">
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Conducted user interviews and design sessions with clerks to map workflow needs.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Defined requirements for new compact filters and unified diary view.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Led discovery sessions on sorting rules and coordinated engineering delivery through UAT.</li>
-                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple"></i> Prepared release notes and updated user guides to ensure that users adapt quickly to the UX change.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Reviewed click-stream data and user heatmaps to identify bottlenecks in the multi-tab navigation process and inform the layout of the unified view.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Conducted user interviews and design sessions with clerks to map workflow needs.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Defined requirements for new compact filters and unified diary view.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Led discovery sessions on sorting rules and coordinated engineering delivery through UAT.</li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-4 h-4 mr-2 mt-1 text-custom-purple flex-shrink-0"></i> Prepared release notes and updated user guides to ensure that users adapt quickly to the UX change.</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <!-- Outcomes/Metrics (UPDATED METRICS FORMAT) -->
                         <div class="md:col-span-1 space-y-4">
                             <h4 class="text-xl font-bold text-brand-dark mb-2">Outcome</h4>
                             <div class="p-4 bg-custom-purple/10 rounded-lg">
@@ -249,19 +228,12 @@
         </section>
 
 
-        <!-- 2.4. EXPERIENCE TIMELINE (Combines Experience and Education) -->
+        <!-- 2.4. EXPERIENCE TIMELINE -->
         <section id="experience" class="p-6 md:p-16 py-20 max-w-6xl mx-auto">
             <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Professional Journey</h2>
             
             <div id="experience-timeline-container" class="relative border-l-4 border-gray-300 pl-8 space-y-12">
-                
                 <!-- Timeline Items rendered by JS -->
-
-                <!-- Additional Experience (List) -->
-                <div id="additional-experience-container" class="pt-6">
-                    <!-- Additional Experience rendered by JS -->
-                </div>
-
             </div>
         </section>
 
@@ -275,34 +247,86 @@
             </div>
         </section>
 
-        <!-- 2.6. ABOUT ME (Human & Friendly) -->
-        <section id="about" class="p-6 md:p-16 py-20 max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-extrabold text-brand-dark mb-8">More About Ida</h2>
+        <!-- 2.6. MORE ABOUT ME -->
+        <section id="about" class="p-6 md:p-16 py-20 max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold text-brand-dark mb-10">More about me</h2>
             
-            <!-- Small Photo Placeholder/Reused asset -->
-            <div class="w-24 h-24 rounded-full mx-auto mb-6 bg-custom-teal/20 p-1">
-                <img src="Ida Photo.jpg" alt="Ida" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/96x96/cccccc/333333?text=Ida';" />
-            </div>
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 content-card">
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-12 font-medium">
+                    Outside of work, you can find me exploring Sydney, trying new cafes and enjoying new comedy and dystopian shows, alongside discovering new AI tools and technical systems.
+                </p>
 
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                I love solving messy product problems and turning them into simple, delightful user experiences. I thrive in fast-moving teams where I can connect the dots between user needs, engineering reality, and stakeholder vision.
-            </p>
-            <!-- UPDATED OUTSIDE WORK COPY -->
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold">
-                Outside work, you can find me exploring Sydney, trying new cafes and enjoying new comedy and dystopian shows, alongside discovering new AI tools and technical systems.
-            </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                    <div class="flex items-center space-x-4 p-5 bg-gray-50 rounded-2xl border border-gray-100 transition-transform hover:scale-[1.02]">
+                        <div class="p-3 bg-custom-purple/10 rounded-xl text-custom-purple flex-shrink-0">
+                            <i data-lucide="plane"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Traveling</h4>
+                            <p class="text-gray-600 text-sm">Always looking forward to the next adventure.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 p-5 bg-gray-50 rounded-2xl border border-gray-100 transition-transform hover:scale-[1.02]">
+                        <div class="p-3 bg-custom-teal/10 rounded-xl text-custom-teal flex-shrink-0">
+                            <i data-lucide="activity"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Running (slowly)</h4>
+                            <p class="text-gray-600 text-sm">Jogging around the neighborhood at my own pace.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 p-5 bg-gray-50 rounded-2xl border border-gray-100 transition-transform hover:scale-[1.02]">
+                        <div class="p-3 bg-custom-yellow/10 rounded-xl text-brand-dark flex-shrink-0">
+                            <i data-lucide="flower-2"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Yoga</h4>
+                            <p class="text-gray-600 text-sm">Focusing on balance and a bit of mental clarity.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 p-5 bg-gray-50 rounded-2xl border border-gray-100 transition-transform hover:scale-[1.02]">
+                        <div class="p-3 bg-brand-dark/10 rounded-xl text-brand-dark flex-shrink-0">
+                            <i data-lucide="coffee"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Cafe Hopper</h4>
+                            <p class="text-gray-600 text-sm">On a mission to find the best brew in the city.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 p-5 bg-gray-50 rounded-2xl border border-gray-100 transition-transform hover:scale-[1.02]">
+                        <div class="p-3 bg-custom-purple/10 rounded-xl text-custom-purple flex-shrink-0">
+                            <i data-lucide="tv"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Screen Time</h4>
+                            <p class="text-gray-600 text-sm">Enjoying comedy and dystopian shows.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 p-5 bg-gray-50 rounded-2xl border border-gray-100 transition-transform hover:scale-[1.02]">
+                        <div class="p-3 bg-custom-teal/10 rounded-xl text-custom-teal flex-shrink-0">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">AI Tools</h4>
+                            <p class="text-gray-600 text-sm">Playing around with new technical systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         
-        <!-- 2.7. WORK RIGHTS SECTION (Visa) -->
+        <!-- 2.7. WORK RIGHTS SECTION -->
         <section id="visa" class="p-6 md:p-16 py-20 bg-custom-teal/5 max-w-full">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-extrabold text-brand-dark mb-8 text-center">Australian Work Authorization</h2>
                 
                 <div class="p-6 md:p-10 rounded-3xl shadow-2xl border-t-8 border-custom-teal bg-white content-card">
-
-                    <!-- UPDATED: Grid layout removed for cleaner, condensed vertical flow -->
                     <div class="space-y-4">
-                        <!-- Status Card -->
                         <div class="p-4 bg-custom-teal/10 border-2 border-custom-teal/50 rounded-xl shadow-inner flex flex-col items-center justify-center">
                             <i data-lucide="check-circle" class="w-8 h-8 text-custom-teal mb-2"></i>
                             <p class="text-lg font-bold text-custom-teal/90 text-center">
@@ -313,9 +337,7 @@
                             </span>
                         </div>
                         
-                        <!-- Vertical Timeline -->
                         <div id="visa-timeline-container" class="relative pt-4 pl-6">
-                            <!-- Vertical Line -->
                             <div class="absolute top-0 bottom-0 left-3 w-1 bg-custom-teal/50 rounded-full"></div>
                             <!-- Timeline Items rendered by JS -->
                         </div>
@@ -330,49 +352,36 @@
             <p class="text-xl text-gray-700 mb-10">I’m currently open to new product challenges. Reach out for a chat!</p>
 
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <!-- Email -->
                 <a href="mailto:igespineda@gmail.com" class="flex items-center justify-center space-x-2 px-6 py-3 bg-brand-dark text-white font-semibold rounded-lg shadow-xl hover:bg-custom-purple transition-all duration-300">
                     <i data-lucide="mail" class="w-5 h-5"></i>
                     <span>Email Me</span>
                 </a>
                 
-                <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/ida-espineda-331a6295/" target="_blank" class="flex items-center justify-center space-x-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-xl hover:bg-blue-700 transition-all duration-300">
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                     <span>Connect on LinkedIn</span>
                 </a>
-
-                <!-- Removed Calendly Button -->
             </div>
         </section>
 
     </main>
 
-    <!-- 3. FOOTER -->
     <footer class="bg-gray-900 text-white p-6 mt-16">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
-            <div class="text-sm font-light mb-4 sm:mb-0">
-                &copy; 2025 Ma. Ida G. Espineda.
-            </div>
+            <div class="text-sm font-light mb-4 sm:mb-0">&copy; 2025 Ma. Ida G. Espineda.</div>
             <div class="flex space-x-6 text-sm">
-                <a href="mailto:igespineda@gmail.com" class="flex items-center hover:text-custom-yellow transition-colors">
-                    <i data-lucide="mail" class="w-4 h-4 mr-1"></i> igespineda@gmail.com
-                </a>
-                <a href="tel:+61409033652" class="flex items-center hover:text-custom-yellow transition-colors">
-                    <i data-lucide="phone" class="w-4 h-4 mr-1"></i> +61 409 033 652
-                </a>
+                <a href="mailto:igespineda@gmail.com" class="flex items-center hover:text-custom-yellow transition-colors"><i data-lucide="mail" class="w-4 h-4 mr-1"></i> igespineda@gmail.com</a>
+                <a href="tel:+61409033652" class="flex items-center hover:text-custom-yellow transition-colors"><i data-lucide="phone" class="w-4 h-4 mr-1"></i> +61 409 033 652</a>
             </div>
         </div>
     </footer>
 
-    <!-- 4. JAVASCRIPT LOGIC (Data, Rendering, and Scrolling) -->
+    <!-- 4. JAVASCRIPT LOGIC -->
     <script>
-        // --- DATA ---
-        // Updated navigation items to match new section IDs
         const NAV_ITEMS = [
             { id: 'hero', label: 'Home', icon: 'home' },
             { id: 'services', label: 'Services', icon: 'zap' },
-            { id: 'cases', label: 'Selected Projects', icon: 'book-open' }, // Updated nav link label
+            { id: 'cases', label: 'Featured Projects', icon: 'book-open' },
             { id: 'experience', label: 'Experience', icon: 'briefcase' },
             { id: 'contact', label: 'Contact', icon: 'mail' },
         ];
@@ -387,12 +396,7 @@
         const SKILLS_DATA = [
             { title: 'Product & Delivery', tags: ['User Stories', 'Discovery', 'Research', 'MVP Design', 'Roadmaps', 'JIRA/Confluence'] },
             { title: 'Project & Ops', tags: ['Process Design', 'Planning', 'Risk Management', 'Stakeholder Alignment', 'Agile/Scrum'] },
-            { title: 'Tools & Systems', 
-              tags: ['JIRA', 'Confluence', 'Notion', 'HubSpot', 'Vercel', 'GoodData', 'MS SSO', 
-                     'Figma', 'Zeplin', 'Miro', 
-                     'Claude', 'Gemini', 'CursorAI', 'ChatGPT', 
-                     'Google Suite', 'MS Office Suite'] 
-            },
+            { title: 'Tools & Systems', tags: ['JIRA', 'Confluence', 'Notion', 'HubSpot', 'Vercel', 'GoodData', 'MS SSO', 'Figma', 'Zeplin', 'Miro', 'Claude', 'Gemini', 'CursorAI', 'ChatGPT', 'Google Suite', 'MS Office Suite'] },
             { title: 'Tech Comfort', tags: ['APIs', 'CMS', 'Basic No-Code', 'SQL', 'Analytics', 'AI Workflows'] },
         ];
         
@@ -402,26 +406,19 @@
             { icon: 'check-circle', label: 'Employment Ensured', date: 'Outcome', desc: 'Continuous employment eligibility confirmed for long-term roles.' },
         ];
         
-        // ADDED 2 MORE EXPERIENCE ITEMS
         const FULL_EXPERIENCE_DATA = [
             { title: 'Product Manager', company: 'BarBooks Australia (Legal SaaS)', date: 'Jul 2022 – Present', icon: 'briefcase', color: 'custom-purple', achievements: ['Owned end-to-end product lifecycle for legal fintech SaaS serving 2,000+ users.', 'Lead product discovery, defining BRDs/PRDs via Jira & Confluence.'] },
             { title: 'Business Product Lead – Shopee Ads', company: 'Shopee Philippines (eCommerce Platform)', date: 'Nov 2020 – Jul 2022', icon: 'briefcase', color: 'custom-purple', achievements: ['Spearheaded go-to-market programs that doubled ad revenue YOY.', 'Managed paid ads team and optimized operations using product and user data.'] },
-            // New items added here
             { title: 'Business Development Officer', company: 'PAL Express (Airline)', date: 'Apr 2018 – May 2020', icon: 'briefcase', color: 'custom-purple', achievements: ['Focused on strategy and development for key airline projects.'] },
             { title: 'Project Development Specialist', company: 'Filinvest Land Inc.', date: 'Aug 2015 – Feb 2018', icon: 'briefcase', color: 'custom-purple', achievements: ['Managed and coordinated project phases for major real estate developments.'] },
-            // Education remains the last item
             { title: 'Bachelor of Science, Economics', company: 'University of the Philippines, Diliman', date: '2011–2015', icon: 'graduation-cap', color: 'custom-teal', achievements: ['Certified in AI for Product Management (Pendo.io) & SQL (Udemy).'] },
         ];
-
-
-        // --- UTILITY FUNCTIONS ---
 
         function scrollToSection(id, event) {
             if (event) event.preventDefault();
             const element = document.getElementById(id);
             if (element) {
-                // Determine offset based on whether it's the hero section or a deep section
-                const offset = (id === 'hero' || id === 'intro') ? 0 : 70; 
+                const offset = 70; 
                 const y = element.getBoundingClientRect().top + window.scrollY - offset; 
                 window.scrollTo({ top: y, behavior: 'smooth' });
                 window.history.pushState(null, '', `#${id}`);
@@ -429,34 +426,24 @@
         }
 
         function createIcon(name, classes = 'w-4 h-4 mr-1') {
-            // Lucide icons are injected via the script below
             return `<i data-lucide="${name}" class="${classes}"></i>`;
         }
 
-        // --- RENDERING FUNCTIONS ---
-
         function renderNav() {
             const navLinksContainer = document.getElementById('nav-links');
-            const navHtml = NAV_ITEMS.map(item => `
-                <button
-                    id="nav-${item.id}"
-                    onclick="scrollToSection('${item.id}')"
-                    class="nav-item flex items-center space-x-1 p-2 rounded-xl transition-all duration-300 font-medium text-sm sm:text-base text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full"
-                >
+            navLinksContainer.innerHTML = NAV_ITEMS.map(item => `
+                <button id="nav-${item.id}" onclick="scrollToSection('${item.id}')" class="nav-item flex items-center space-x-1 p-2 rounded-xl transition-all duration-300 font-medium text-sm sm:text-base text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full">
                     ${createIcon(item.icon, 'w-4 h-4 hidden sm:block')}
                     <span>${item.label}</span>
                 </button>
             `).join('');
-            navLinksContainer.innerHTML = navHtml;
         }
         
         function renderServices() {
             const container = document.getElementById('services-grid');
             container.innerHTML = SERVICES_DATA.map(service => `
                 <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-custom-purple hover:border-custom-teal transition-all duration-300 content-card">
-                    <div class="w-10 h-10 bg-custom-purple/10 rounded-full flex items-center justify-center mb-4">
-                        <i data-lucide="${service.icon}" class="w-6 h-6 text-custom-purple"></i>
-                    </div>
+                    <div class="w-10 h-10 bg-custom-purple/10 rounded-full flex items-center justify-center mb-4"><i data-lucide="${service.icon}" class="w-6 h-6 text-custom-purple"></i></div>
                     <h3 class="text-xl font-bold text-brand-dark mb-2">${service.title}</h3>
                     <p class="text-gray-600 text-sm">${service.description}</p>
                 </div>
@@ -468,37 +455,23 @@
             container.innerHTML = SKILLS_DATA.map(skillGroup => `
                 <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-custom-teal hover:border-custom-purple transition-all duration-300 content-card">
                     <h3 class="text-xl font-bold text-brand-dark mb-4">${skillGroup.title}</h3>
-                    <div class="flex flex-wrap gap-2">
-                        ${skillGroup.tags.map(tag => `
-                            <span class="text-xs font-medium bg-gray-200 text-gray-700 px-3 py-1 rounded-full">${tag}</span>
-                        `).join('')}
-                    </div>
+                    <div class="flex flex-wrap gap-2">${skillGroup.tags.map(tag => `<span class="text-xs font-medium bg-gray-200 text-gray-700 px-3 py-1 rounded-full">${tag}</span>`).join('')}</div>
                 </div>
             `).join('');
         }
 
-
         function renderVisaTimeline() {
             const container = document.getElementById('visa-timeline-container');
-            if (!container) {
-                console.error("Container #visa-timeline-container not found.");
-                return;
-            }
-            container.innerHTML += VISA_TIMELINE.map(item => `
+            if (!container) return;
+            container.innerHTML = VISA_TIMELINE.map(item => `
                 <div class="mb-4 flex items-start relative">
-                    <!-- Timeline Dot/Icon (Fixed Alignment) -->
                     <div class="absolute left-0 top-0 h-full flex items-start justify-center w-6 z-10">
-                        <div class="p-1 bg-white rounded-full shadow-md border-2 border-custom-teal flex items-center justify-center">
-                            <i data-lucide="${item.icon}" class="w-4 h-4 text-custom-teal"></i>
+                        <div class="p-1 bg-white rounded-full shadow-md border-2 border-custom-teal flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="${item.icon}" class="w-4 h-4 text-custom-teal flex-shrink-0"></i>
                         </div>
                     </div>
-
-                    <!-- Content -->
                     <div class="ml-8 p-0 flex-1">
-                        <p class="text-sm font-bold text-gray-800 flex justify-between items-center mb-0.5">
-                            ${item.label}
-                            <span class="text-xs font-medium text-custom-teal bg-custom-teal/10 px-2 py-0.5 rounded-full">${item.date}</span>
-                        </p>
+                        <p class="text-sm font-bold text-gray-800 flex justify-between items-center mb-0.5">${item.label}<span class="text-xs font-medium text-custom-teal bg-custom-teal/10 px-2 py-0.5 rounded-full">${item.date}</span></p>
                         <p class="text-gray-600 text-sm">${item.desc}</p>
                     </div>
                 </div>
@@ -507,33 +480,18 @@
 
         function renderTimelineExperience() {
             const timelineContainer = document.getElementById('experience-timeline-container');
-            const additionalContainer = document.getElementById('additional-experience-container'); 
-
-            if (!timelineContainer || !additionalContainer) {
-                console.error("One or both experience containers not found: #experience-timeline-container or #additional-experience-container");
-                return; // Exit function if containers aren't found
-            }
-            
-            // Render all major roles and education
+            if (!timelineContainer) return;
             timelineContainer.innerHTML = FULL_EXPERIENCE_DATA.map(item => `
                 <div class="relative bg-white p-6 rounded-xl shadow-lg content-card hover:shadow-2xl transition-shadow duration-300">
                     <span class="absolute -left-5 top-4 w-10 h-10 bg-${item.color} rounded-full flex items-center justify-center text-white font-bold text-lg">
-                        <i data-lucide="${item.icon}" class="w-5 h-5"></i>
+                        <i data-lucide="${item.icon}" class="w-5 h-5 flex-shrink-0"></i>
                     </span>
                     <h3 class="text-2xl font-bold text-brand-dark">${item.title}</h3>
                     <p class="text-lg text-gray-700 mb-2">${item.company} | ${item.date}</p>
-                    <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">
-                        ${item.achievements.map(a => `<li>${a}</li>`).join('')}
-                    </ul>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1 text-sm">${item.achievements.map(a => `<li>${a}</li>`).join('')}</ul>
                 </div>
             `).join('');
-
-             // Render Additional Experience separately (Note: Keeping this empty now since all relevant roles are in FULL_EXPERIENCE_DATA)
-             additionalContainer.innerHTML = '';
         }
-
-        
-        // --- SCROLL OBSERVATION LOGIC ---
 
         function setupScrollSpy() {
             const navItems = document.querySelectorAll('.nav-item');
@@ -546,60 +504,34 @@
                 document.getElementById('about'),
                 document.getElementById('visa'),
             ];
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '-35% 0px -65% 0px', // Activates when section is roughly in the middle of the viewport
-                threshold: 0,
-            };
-
+            const observerOptions = { root: null, rootMargin: '-35% 0px -65% 0px', threshold: 0 };
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     const id = entry.target.id;
-                    const navLink = document.getElementById(`nav-${id}`);
-
-                    // Map specific section IDs back to simplified nav links
                     let activeId = id;
                     if (id === 'hero') activeId = 'hero';
-                    // FIX: Ensure 'cases' highlights 'cases', and 'experience' highlights 'experience'
                     if (id === 'cases') activeId = 'cases'; 
                     if (id === 'experience') activeId = 'experience'; 
                     if (id === 'about' || id === 'visa') activeId = 'about';
-
                     const finalNavLink = document.getElementById(`nav-${activeId}`);
-
-
                     if (finalNavLink && entry.isIntersecting) {
-                        // Deactivate all links
-                        navItems.forEach(item => {
-                            item.classList.remove('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105');
-                        });
-                        // Activate current link
+                        navItems.forEach(item => item.classList.remove('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105'));
                         finalNavLink.classList.add('bg-purple-100', 'text-purple-800', 'shadow-md', 'transform', 'scale-105');
                     }
                 });
             }, observerOptions);
-
-            sections.forEach(section => {
-                if (section) observer.observe(section);
-            });
+            sections.forEach(section => { if (section) observer.observe(section); });
         }
 
-
-        // --- INITIALIZATION ---
         window.onload = function() {
             renderNav();
             renderServices();
             renderSkills();
             renderTimelineExperience();
             renderVisaTimeline();
-            
-            // Replaces data-lucide attributes with SVG icons
             lucide.createIcons();
-
             setupScrollSpy();
         };
     </script>
-
 </body>
 </html>
