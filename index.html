@@ -94,7 +94,7 @@
                     </h1>
                     
                     <p class="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
-                        I focus on helping teams build clear, user-centred digital products and am passionate about shipping efficient outcomes.
+                        I help teams define and deliver clear, usable digital products.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
@@ -235,7 +235,7 @@
             </div>
         </section>
 
-        <!-- 2.5. CERTIFICATIONS SECTION (New) -->
+        <!-- 2.5. CERTIFICATIONS SECTION -->
         <section id="certs" class="p-6 md:p-16 py-20 bg-gray-50 max-w-full">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-4xl font-extrabold text-brand-dark mb-12 text-center">Certifications & Assessments</h2>
@@ -441,7 +441,7 @@
                 const offset = 70; 
                 const y = element.getBoundingClientRect().top + window.scrollY - offset; 
                 window.scrollTo({ top: y, behavior: 'smooth' });
-                window.history.pushState(null, '', `#${id}`);
+                window.history.hash = `#${id}`;
             }
         }
 
